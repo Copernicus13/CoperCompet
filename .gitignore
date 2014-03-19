@@ -1,0 +1,21 @@
+# Ignore les fichiers créés par Visual Studio
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+obj/
+ipch/
+[Rr]elease*/
+_ReSharper*/
+GoogleCodeJam.sdf
+GoogleCodeJam.opensdf
