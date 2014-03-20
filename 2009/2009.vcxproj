@@ -39,7 +39,7 @@
     <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
     <OutputPath>$(OutDir)</OutputPath>
     <TargetDir>$(SolutionDir)bin\</TargetDir>
-    <TargetPath>$(TargetDir)\$(TargetFileName)</TargetPath>
+    <TargetPath>$(TargetDir)$(TargetFileName)</TargetPath>
     <LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand>
     <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
     <LastBuildState>$(IntDir)$(ProjectName).lastbuildstate</LastBuildState>

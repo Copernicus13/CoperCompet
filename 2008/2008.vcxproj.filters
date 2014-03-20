@@ -17,6 +17,9 @@
     <ClCompile Include="src\MinimumScalarProduct.cpp">
       <Filter>2. Source files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Milkshakes.cpp">
+      <Filter>2. Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Prototypes.h">

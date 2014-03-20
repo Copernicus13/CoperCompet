@@ -20,6 +20,10 @@ int main(int argc, char* argv[])
 	{
 		MinimumScalarProduct();
 	}
+	else if (param == "Milkshakes")
+	{
+		Milkshakes();
+	}
 
 #ifdef _DEBUG
 	system("pause");

@@ -39,7 +39,7 @@
     <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
     <OutputPath>$(OutDir)</OutputPath>
     <TargetDir>$(SolutionDir)bin\</TargetDir>
-    <TargetPath>$(TargetDir)\$(TargetFileName)</TargetPath>
+    <TargetPath>$(TargetDir)$(TargetFileName)</TargetPath>
     <LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand>
     <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
     <LastBuildState>$(IntDir)$(ProjectName).lastbuildstate</LastBuildState>
@@ -76,6 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Milkshakes.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\MinimumScalarProduct.cpp" />
   </ItemGroup>
