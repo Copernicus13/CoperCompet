@@ -23,8 +23,8 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E29BE9F-AEA5-4D37-90E9-CED98B83B86B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>GoogleCodeJam::Y2008</RootNamespace>
-    <ProjectName>2008</ProjectName>
+    <RootNamespace>GoogleCodeJam</RootNamespace>
+    <ProjectName>GoogleCodeJam</ProjectName>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -76,9 +76,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\AlienLanguage.cpp" />
+    <ClCompile Include="src\ReverseWords.cpp" />
+    <ClCompile Include="src\StoreCredit.cpp" />
+    <ClCompile Include="src\T9Spelling.cpp" />
     <ClCompile Include="src\Milkshakes.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\MinimumScalarProduct.cpp" />
+    <ClCompile Include="src\Numbers.cpp" />
+    <ClCompile Include="src\OldMagician.cpp" />
+    <ClCompile Include="src\SquareFields.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Prototypes.h" />

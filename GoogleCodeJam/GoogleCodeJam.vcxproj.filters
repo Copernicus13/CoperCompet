@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="1. Include files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="2. Source files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="2. Source files\2008">
+      <UniqueIdentifier>{315adb86-c3bd-4fed-af7f-cf0710290f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. Source files\2009">
+      <UniqueIdentifier>{41859b2e-0bca-4d6f-9d98-7bb0c1e5ab6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. Source files\2010">
+      <UniqueIdentifier>{d19068d7-b192-488a-87f9-dcd245ea28bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. Source files\2010\Africa">
+      <UniqueIdentifier>{4f8af9d0-73a2-48f7-b5b8-1de46a8ddc82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. Source files\Practice">
+      <UniqueIdentifier>{21f0aaf6-cb68-48f1-bc33-98ebaed6b7e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>2. Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Milkshakes.cpp">
+      <Filter>2. Source files\2008</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Numbers.cpp">
+      <Filter>2. Source files\2008</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MinimumScalarProduct.cpp">
+      <Filter>2. Source files\2008</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlienLanguage.cpp">
+      <Filter>2. Source files\2009</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ReverseWords.cpp">
+      <Filter>2. Source files\2010\Africa</Filter>
+    </ClCompile>
+    <ClCompile Include="src\T9Spelling.cpp">
+      <Filter>2. Source files\2010\Africa</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StoreCredit.cpp">
+      <Filter>2. Source files\2010\Africa</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OldMagician.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SquareFields.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Prototypes.h">
+      <Filter>1. Include files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
