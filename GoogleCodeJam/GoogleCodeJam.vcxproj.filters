@@ -56,6 +56,9 @@
     <ClCompile Include="src\SquareFields.cpp">
       <Filter>2. Source files\Practice</Filter>
     </ClCompile>
+    <ClCompile Include="src\Cycles.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Prototypes.h">

@@ -26,6 +26,7 @@ ECHO º e. Milkshakes                 º
 ECHO º f. Numbers                    º
 ECHO º g. AlienLanguage              º
 ECHO º h. OldMagician                º
+ECHO º i. SquareFields               º
 ECHO º z. All                        º
 ECHO º p. Make a pause               º
 ECHO º q. Quit                       º
@@ -37,21 +38,22 @@ SET /P Choice=[default=%Choice%]^>
 SET idx=0
 SET cpt=1
 SET Choice=%Choice:z=ab%
-CALL :FuncBuild 2008\2008.vcxproj
+CALL :FuncBuild GoogleCodeJam\GoogleCodeJam.vcxproj
 :ChoiceInnerLoop
 CALL SET char=%%Choice:~%idx%,1%%
 SET /A idx+=1
 IF "%char%"=="" PAUSE & GOTO :EOF
 IF "%char%"=="@" SET consoleInput=1
 IF "%char%"=="*" SET consoleOutput=1
-IF /I "%char%"=="a" CALL :FuncRun 2010 StoreCredit
-IF /I "%char%"=="b" CALL :FuncRun 2010 ReverseWords
-IF /I "%char%"=="c" CALL :FuncRun 2010 T9Spelling
-IF /I "%char%"=="d" CALL :FuncRun 2008 MinimumScalarProduct
-IF /I "%char%"=="e" CALL :FuncRun 2008 Milkshakes
-IF /I "%char%"=="f" CALL :FuncRun 2008 Numbers
-IF /I "%char%"=="g" CALL :FuncRun 2008 AlienLanguage
-IF /I "%char%"=="h" CALL :FuncRun 2008 OldMagician
+IF /I "%char%"=="a" CALL :FuncRun StoreCredit
+IF /I "%char%"=="b" CALL :FuncRun ReverseWords
+IF /I "%char%"=="c" CALL :FuncRun T9Spelling
+IF /I "%char%"=="d" CALL :FuncRun MinimumScalarProduct
+IF /I "%char%"=="e" CALL :FuncRun Milkshakes
+IF /I "%char%"=="f" CALL :FuncRun Numbers
+IF /I "%char%"=="g" CALL :FuncRun AlienLanguage
+IF /I "%char%"=="h" CALL :FuncRun OldMagician
+IF /I "%char%"=="i" CALL :FuncRun SquareFields
 IF /I "%char%"=="p" PAUSE
 IF /I "%char%"=="q" GOTO :EOF
 GOTO :ChoiceInnerLoop
@@ -65,12 +67,12 @@ GOTO :EOF
 
 :FuncRun
 IF "%consoleInput%"=="1" (
-  start bin\%~n1.exe %2
+  start bin\GoogleCodeJam.exe %1
 ) ELSE (
   IF "%consoleOutput%"=="1" (
-    FOR %%A IN (data\Input\%2-*.in) DO TYPE %%A | bin\%~n1.exe %2
+    FOR %%A IN (data\Input\%1-*.in) DO TYPE %%A | bin\GoogleCodeJam.exe %1
   ) ELSE (
-    FOR %%A IN (data\Input\%2-*.in) DO TYPE %%A | bin\%~n1.exe %2 > data\Output\%%~nA.out
+    FOR %%A IN (data\Input\%1-*.in) DO TYPE %%A | bin\GoogleCodeJam.exe %1 > data\Output\%%~nA.out
   )
 )
 GOTO :EOF

@@ -9,6 +9,7 @@ namespace Practice
 {
 void OldMagician();
 void SquareFields();
+void Cycles();
 } // namespace Practice
 
 

@@ -77,6 +77,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AlienLanguage.cpp" />
+    <ClCompile Include="src\Cycles.cpp" />
     <ClCompile Include="src\ReverseWords.cpp" />
     <ClCompile Include="src\StoreCredit.cpp" />
     <ClCompile Include="src\T9Spelling.cpp" />

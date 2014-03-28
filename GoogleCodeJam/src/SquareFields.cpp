@@ -1,30 +1,68 @@
 #include <iostream>
 #include <vector>
+#include <deque>
 #include <algorithm>
 #include <utility>
+#include <iterator>
 #include <cmath>
+#include <cstring>
 #include <cassert>
 
 #include "Prototypes.h"
 
-typedef struct s
-{
-	short _x, _y;
-	float _norm;
-	s(short x, short y)
-	{
-		_x = x;
-		_y = y;
-		_norm = std::sqrt(static_cast<float>(x * x + y * y));
-	}
-} point_t;
-
+typedef struct { unsigned short x, y; } point_t;
 typedef std::vector<point_t> list_t;
-typedef std::vector<list_t> tab_t;
 
-bool operator <(point_t const &first, point_t const &second)
+static bool operator <(point_t const &first, point_t const &second)
 {
-	return first._norm < second._norm;
+	return first.y == second.y ? first.x < second.x : first.y < second.y;
+}
+
+int covered[15];
+
+bool iscovered(list_t const &pt, int sz, int n, int k)
+{
+	int i, j;
+	if (k == 0)
+	{
+		for (i = 0; i < n; ++i)
+			if (!covered[i])
+				return false;
+		return true;
+	}
+	for (i = 0; i < n; ++i)
+		if (!covered[i])
+			break;
+	if (i == n)
+		return true;
+	bool rv = false;
+	for (j = 0; j < n && !rv; ++j)
+	{
+		if (pt[j].x >= pt[i].x - sz && pt[j].x <= pt[i].x + sz)
+		{
+			if (!covered[j])
+			{
+				int y = pt[i].y;
+				int x = (pt[j].x <= pt[i].x ? pt[j].x : pt[j].x - sz);
+				for (int a = 0; a < n; ++a)
+				{
+					if (pt[a].x >= x && pt[a].x <= x + sz && pt[a].y >= y && pt[a].y <= y + sz)
+					{
+						++covered[a];
+					}
+				}
+				rv |= iscovered(pt, sz, n, k - 1);
+				for (int a = 0; a < n; ++a)
+				{
+					if (pt[a].x >= x && pt[a].x <= x + sz && pt[a].y >= y && pt[a].y <= y + sz)
+					{
+						--covered[a];
+					}
+				}
+			}
+		}
+	}
+	return rv;
 }
 
 void GoogleCodeJam::Practice::SquareFields()
@@ -49,33 +87,29 @@ void GoogleCodeJam::Practice::SquareFields()
 
 		for (int b (0); b < n; ++b)
 		{
-			unsigned short x, y;
-			std::cin >> x >> y;
-			assert(x >= 0 && x < 64000 && y >= 0 && y < 64000);
-			points.push_back(point_t(x, y));
+			point_t p;
+			std::cin >> p.x >> p.y;
+			assert(p.x >= 0 && p.x < 64000 && p.y >= 0 && p.y < 64000);
+			points.push_back(p);
 		}
 
 		std::sort(points.begin(), points.end());
-
-		tab_t tab(;
-		tab.reserve(k);
-
-		const int taille = n / k + n % k;
-		for (int i = 0; i < k; ++i)
+		std::memset(covered, 0, sizeof(covered));
+		
+		int lo = 0, hi = 64000;
+		while (lo < hi)
 		{
-			list_t sublist;
-			sublist.reserve(taille);
-			for (int j = 0; j < n / k; ++j)
+			int mid = (lo + hi) / 2;
+			if (iscovered(points, mid, n, k))
 			{
+				hi = mid;
 			}
-			std::min_element(points.begin(), points.end());
-			sublist.push_back(0);
-			tab.push_back(sublist);
+			else
+			{
+				lo = mid + 1;
+			}
 		}
 
-		unsigned short res;
-		//for (res = 1; !good(points, far, res); ++res);
-
-		std::cout << "Case #" << a << ": " << res << std::endl;
+		std::cout << "Case #" << a << ": " << lo << std::endl;
 	}
 }
