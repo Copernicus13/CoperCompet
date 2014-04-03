@@ -27,6 +27,8 @@ ECHO º f. Numbers                    º
 ECHO º g. AlienLanguage              º
 ECHO º h. OldMagician                º
 ECHO º i. SquareFields               º
+ECHO º j. SavingUniverse             º
+ECHO º k. TrainTimetable             º
 ECHO º z. All                        º
 ECHO º p. Make a pause               º
 ECHO º q. Quit                       º
@@ -54,6 +56,8 @@ IF /I "%char%"=="f" CALL :FuncRun Numbers
 IF /I "%char%"=="g" CALL :FuncRun AlienLanguage
 IF /I "%char%"=="h" CALL :FuncRun OldMagician
 IF /I "%char%"=="i" CALL :FuncRun SquareFields
+IF /I "%char%"=="j" CALL :FuncRun SavingUniverse
+IF /I "%char%"=="k" CALL :FuncRun TrainTimetable
 IF /I "%char%"=="p" PAUSE
 IF /I "%char%"=="q" GOTO :EOF
 GOTO :ChoiceInnerLoop

@@ -65,7 +65,7 @@ bool iscovered(list_t const &pt, int sz, int n, int k)
 	return rv;
 }
 
-void GoogleCodeJam::Practice::SquareFields()
+void GoogleCodeJam::Practice::Contest::SquareFields()
 {
 	int nbCases;
 

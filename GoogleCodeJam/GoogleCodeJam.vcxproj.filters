@@ -59,6 +59,39 @@
     <ClCompile Include="src\Cycles.cpp">
       <Filter>2. Source files\Practice</Filter>
     </ClCompile>
+    <ClCompile Include="src\SavingUniverse.cpp">
+      <Filter>2. Source files\2008</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTimetable.cpp">
+      <Filter>2. Source files\2008</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FlySwatter.cpp">
+      <Filter>2. Source files\2008</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlienNumbers.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlwaysTurnLeft.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EggDrop.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShoppingPlan.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TriangleTrilemma.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThePriceIsWrong.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RandomRoute.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HexagonGame.cpp">
+      <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Prototypes.h">

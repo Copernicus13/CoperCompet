@@ -77,8 +77,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AlienLanguage.cpp" />
+    <ClCompile Include="src\AlienNumbers.cpp" />
+    <ClCompile Include="src\AlwaysTurnLeft.cpp" />
     <ClCompile Include="src\Cycles.cpp" />
+    <ClCompile Include="src\EggDrop.cpp" />
+    <ClCompile Include="src\FlySwatter.cpp" />
+    <ClCompile Include="src\HexagonGame.cpp" />
+    <ClCompile Include="src\RandomRoute.cpp" />
     <ClCompile Include="src\ReverseWords.cpp" />
+    <ClCompile Include="src\SavingUniverse.cpp" />
+    <ClCompile Include="src\ShoppingPlan.cpp" />
     <ClCompile Include="src\StoreCredit.cpp" />
     <ClCompile Include="src\T9Spelling.cpp" />
     <ClCompile Include="src\Milkshakes.cpp" />
@@ -87,6 +95,9 @@
     <ClCompile Include="src\Numbers.cpp" />
     <ClCompile Include="src\OldMagician.cpp" />
     <ClCompile Include="src\SquareFields.cpp" />
+    <ClCompile Include="src\ThePriceIsWrong.cpp" />
+    <ClCompile Include="src\TrainTimetable.cpp" />
+    <ClCompile Include="src\TriangleTrilemma.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Prototypes.h" />

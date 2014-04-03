@@ -3,7 +3,7 @@
 
 #include "Prototypes.h"
 
-void GoogleCodeJam::Practice::OldMagician()
+void GoogleCodeJam::Practice::Contest::OldMagician()
 {
 	int nbCases;
 
