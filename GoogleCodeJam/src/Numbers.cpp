@@ -1,7 +1,3 @@
-#include <iostream>
-#include <cmath>
-#include <cassert>
-
 #include "Prototypes.h"
 
 inline static long double mypow(long double X, unsigned int Y)
@@ -21,12 +17,12 @@ void GoogleCodeJam::Y2008::Numbers()
 	const long double c2 = 5.2360679774997896964091;
 	const long double c3 = 5.2360679774997896;
 
-	int nbCases;
+	unsigned int nbCases;
 
 	std::cin >> nbCases;
 	assert(nbCases >= 1 && nbCases <= 100);
 
-	for (int a (1); a <= nbCases; ++a)
+	for (unsigned int a (1); a <= nbCases; ++a)
 	{
 		int n;
 		std::cin >> n;

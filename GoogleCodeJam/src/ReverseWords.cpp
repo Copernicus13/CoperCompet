@@ -8,17 +8,17 @@
 
 void GoogleCodeJam::Y2010::Africa::ReverseWords()
 {
-	int nbCases;
+	unsigned int nbCases;
 
 	std::cin >> nbCases;
 	std::cin.ignore();
 	assert(nbCases >= 1 && nbCases <= 100);
 
-	for (int a (1); a <= nbCases; ++a)
+	for (unsigned int a (1); a <= nbCases; ++a)
 	{
-		std::string s;
+		string s;
 		std::stringstream ss;
-		std::stack<std::string> r;
+		std::stack<string> r;
 
 		std::getline(std::cin, s);
 		ss.str(s);

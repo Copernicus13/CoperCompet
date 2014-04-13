@@ -1,10 +1,3 @@
-#include <iostream>
-#include <ctime>
-#include <vector>
-#include <list>
-#include <algorithm>
-#include <cassert>
-
 #include "Prototypes.h"
 
 typedef struct
@@ -33,7 +26,7 @@ static void todaytime(time_t &t, int hour, int minute)
 	t = mktime(&tmp);
 }
 
-static void doit(std::list<time_t> &t1, std::list<time_t> &t2, int &res, trp_t x, int t)
+static void doit(std::list<time_t> &t1, std::list<time_t> &t2, unsigned int &res, trp_t x, unsigned int t)
 {
 	bool found (false);
 	std::list<time_t>::const_iterator y;
@@ -58,14 +51,14 @@ static void doit(std::list<time_t> &t1, std::list<time_t> &t2, int &res, trp_t x
 
 void GoogleCodeJam::Y2008::Qualification::TrainTimetable()
 {
-	int nbCases;
+	unsigned int nbCases;
 
 	std::cin >> nbCases;
 	assert(nbCases >= 1 && nbCases <= 100);
 
-	for (int a (1); a <= nbCases; ++a)
+	for (unsigned int a (1); a <= nbCases; ++a)
 	{
-		int t, nA, nB;
+		unsigned int t, nA, nB;
 		std::cin >> t >> nA >> nB;
 		assert(t >= 0 && t <= 60);
 		assert(nA >= 0 && nA <= 100);
@@ -73,7 +66,7 @@ void GoogleCodeJam::Y2008::Qualification::TrainTimetable()
 
 		list_t j;
 		j.reserve(nA + nB);
-		for (int b (0); b < nA + nB; ++b)
+		for (unsigned int b (0); b < nA + nB; ++b)
 		{
 			trp_t trp;
 			int c, d;
@@ -96,7 +89,7 @@ void GoogleCodeJam::Y2008::Qualification::TrainTimetable()
 		std::list<time_t> tA;
 		std::list<time_t> tB;
 
-		int resA (0), resB (0);
+		unsigned int resA (0), resB (0);
 		for (list_t::const_iterator x (j.begin()); x != j.end(); ++x)
 		{
 			if (!x->from)

@@ -1,6 +1,6 @@
 #include "Prototypes.h"
 
-void GoogleCodeJam::Practice::Beta2008::RandomRoute()
+void GoogleCodeJam::Y2014::Qualification::DeceitfulWar()
 {
 	unsigned int nbCases;
 

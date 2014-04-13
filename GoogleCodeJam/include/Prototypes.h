@@ -1,5 +1,23 @@
 #pragma once
 
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <list>
+#include <map>
+#include <array>
+#include <deque>
+#include <ctime>
+#include <algorithm>
+#include <cmath>
+#include <utility>
+#include <limits>
+#include <cassert>
+
+using std::string;
+
 namespace GoogleCodeJam
 {
 
@@ -73,6 +91,21 @@ void T9Spelling();
 } // namespace Africa
 
 } // namespace Y2010
+
+
+
+namespace Y2014
+{
+
+namespace Qualification
+{
+void MagicTrick();
+void CookieClickerAlpha();
+void MinesweeperMaster();
+void DeceitfulWar();
+} // namespace Qualification
+
+} // namespace Y2014
 
 
 

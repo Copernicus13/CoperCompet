@@ -1,37 +1,31 @@
-#include <iterator>
-#include <algorithm>
-#include <vector>
-#include <iostream>
-#include <cassert>
-
 #include "Prototypes.h"
 
 void GoogleCodeJam::Y2008::MinimumScalarProduct()
 {
-	int nbCases;
+	unsigned int nbCases;
 
 	std::cin >> nbCases;
 	assert(nbCases >= 1 && nbCases <= 1000);
 
-	for (int a (1); a <= nbCases; ++a)
+	for (unsigned int a (1); a <= nbCases; ++a)
 	{
-		int n;
+		unsigned int n;
 
 		std::cin >> n;
-		assert(nbCases >= 1 && nbCases <= 800);
+		assert(n >= 1 && n <= 800);
  
 		std::vector<int> v1;
 		v1.reserve(n);
 		std::vector<int> v2;
 		v2.reserve(n);
 
-		for (int b (0); b < n; ++b)
+		for (unsigned int b (0); b < n; ++b)
 		{
 			int c;
 			std::cin >> c;
 			v1.push_back(c);
 		}
-		for (int b (0); b < n; ++b)
+		for (unsigned int b (0); b < n; ++b)
 		{
 			int c;
 			std::cin >> c;

@@ -20,13 +20,13 @@ static const char* const tab[27] =
 
 void GoogleCodeJam::Y2010::Africa::T9Spelling()
 {
-	int nbCases;
+	unsigned int nbCases;
 
 	std::cin >> nbCases;
 	std::cin.ignore();
 	assert(nbCases >= 1 && nbCases <= 100);
 
-	for (int a (1); a <= nbCases; ++a)
+	for (unsigned int a (1); a <= nbCases; ++a)
 	{
 		std::cout << "Case #" << a << ": ";
 		char l = -1;

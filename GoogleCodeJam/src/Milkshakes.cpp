@@ -1,9 +1,3 @@
-#include <vector>
-#include <algorithm>
-#include <iostream>
-#include <cassert>
-#include <utility>
-
 #include "Prototypes.h"
 
 typedef std::pair<int, int> flavor_t;
@@ -36,14 +30,14 @@ static int getmalted(list_t l)
 
 void GoogleCodeJam::Y2008::Milkshakes()
 {
-	int nbCases;
+	unsigned int nbCases;
 
 	std::cin >> nbCases;
 	assert(nbCases >= 1 && nbCases <= 100);
 
-	for (int a (1); a <= nbCases; ++a)
+	for (unsigned int a (1); a <= nbCases; ++a)
 	{
-		int nbflavor, nbcustomers;
+		unsigned int nbflavor, nbcustomers;
 		std::cin >> nbflavor >> nbcustomers;
 		assert(nbflavor >= 1 && nbflavor <= 2000);
 		assert(nbcustomers >= 1 && nbcustomers <= 2000);
@@ -51,13 +45,13 @@ void GoogleCodeJam::Y2008::Milkshakes()
 		tab_t customers;
 		customers.reserve(nbcustomers);
 
-		for (int b (0); b < nbcustomers; ++b)
+		for (unsigned int b (0); b < nbcustomers; ++b)
 		{
-			int nbgout;
+			unsigned int nbgout;
 			std::cin >> nbgout;
 			list_t gout;
 			gout.reserve(nbgout);
-			for (int c (0); c < nbgout; ++c)
+			for (unsigned int c (0); c < nbgout; ++c)
 			{
 				int g, h;
 				std::cin >> g >> h;

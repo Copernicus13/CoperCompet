@@ -7,14 +7,14 @@ static int* GetResult(const int c, const int i, const int p[]);
 
 void GoogleCodeJam::Y2010::Africa::StoreCredit()
 {
-	int nbCases;
+	unsigned int nbCases;
 
 	std::cin >> nbCases;
 	assert(nbCases >= 1 && nbCases <= 50);
 
-	for (int a (1); a <= nbCases; ++a)
+	for (unsigned int a (1); a <= nbCases; ++a)
 	{
-		int c, i;
+		unsigned int c, i;
 
 		std::cin >> c;				// amount of credit you have at the store
 		assert(c >= 5 && c <= 1000);
@@ -22,7 +22,7 @@ void GoogleCodeJam::Y2010::Africa::StoreCredit()
 		assert(i >= 3 && c <= 2000);
 
 		int* p = new int[i];		// prices
-		for (int b (0); b < i; ++b)
+		for (unsigned int b (0); b < i; ++b)
 		{
 			std::cin >> p[b];
 			assert(p[b] >= 1 && p[b] <= 1000);

@@ -5,11 +5,25 @@ title GoogleCodeJam launcher
 DEL /Q Data\Output\*.out 2> nul
 RD /S /Q bin 2> nul
 
+SET map=
+REM Practice
+SET map=%map%aa-AlienNumbers;ab-AlwaysTurnLeft;ac-EggDrop;ad-ShoppingPlan;ae-TriangleTrilemma;af-ThePriceIsWrong;
+SET map=%map%ag-RandomRoute;ah-HexagonGame;ai-OldMagician;aj-SquareFields;ak-Cycles;
+REM 2008
+SET map=%map%ba-SavingUniverse;bb-TrainTimetable;bc-FlySwatter;bd-MinimumScalarProduct;be-Milkshakes;bf-Numbers;
+REM 2009
+SET map=%map%ca-AlienLanguage;
+REM 2010 Africa
+SET map=%map%da-ReverseWords;db-StoreCredit;dc-T9Spelling
+REM 2014
+SET map=%map%ha-MagicTrick;hb-CookieClickerAlpha;hc-MinesweeperMaster;hd-DeceitfulWar
+
 ECHO ÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛ
 ECHO Û                            þþþþþ ¸Coper þþþþþ                             Û
 ECHO ÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛ
 
-SET Choice=h
+SET Choice=a
+SET Current=hb
 
 SET MsBuildCmd=%WinDir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
 SET MsBuildArgs=/nologo /v:q
@@ -18,19 +32,9 @@ SET MsBuildArgs=/nologo /v:q
 ECHO ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ» ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 ECHO º Choose project(s) to run:     º ³ Global Options (as a prefix)            ³
 ECHO ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
-ECHO º a. StoreCredit                º ³ @ Input from console, Output to console ³
-ECHO º b. ReverseWords               º ³ * Output to console                     ³
-ECHO º c. T9Spelling                 º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-ECHO º d. MinimumScalarProduct       º
-ECHO º e. Milkshakes                 º
-ECHO º f. Numbers                    º
-ECHO º g. AlienLanguage              º
-ECHO º h. OldMagician                º
-ECHO º i. SquareFields               º
-ECHO º j. SavingUniverse             º
-ECHO º k. TrainTimetable             º
-ECHO º z. All                        º
-ECHO º p. Make a pause               º
+ECHO º a. *Current*                  º ³ @ Input from console, Output to console ³
+ECHO º z. All                        º ³ * Output to console                     ³
+ECHO º p. Make a pause               º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 ECHO º q. Quit                       º
 ECHO ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
 
@@ -39,7 +43,6 @@ SET /P Choice=[default=%Choice%]^>
 :Choice2
 SET idx=0
 SET cpt=1
-SET Choice=%Choice:z=ab%
 CALL :FuncBuild GoogleCodeJam\GoogleCodeJam.vcxproj
 :ChoiceInnerLoop
 CALL SET char=%%Choice:~%idx%,1%%
@@ -47,20 +50,22 @@ SET /A idx+=1
 IF "%char%"=="" PAUSE & GOTO :EOF
 IF "%char%"=="@" SET consoleInput=1
 IF "%char%"=="*" SET consoleOutput=1
-IF /I "%char%"=="a" CALL :FuncRun StoreCredit
-IF /I "%char%"=="b" CALL :FuncRun ReverseWords
-IF /I "%char%"=="c" CALL :FuncRun T9Spelling
-IF /I "%char%"=="d" CALL :FuncRun MinimumScalarProduct
-IF /I "%char%"=="e" CALL :FuncRun Milkshakes
-IF /I "%char%"=="f" CALL :FuncRun Numbers
-IF /I "%char%"=="g" CALL :FuncRun AlienLanguage
-IF /I "%char%"=="h" CALL :FuncRun OldMagician
-IF /I "%char%"=="i" CALL :FuncRun SquareFields
-IF /I "%char%"=="j" CALL :FuncRun SavingUniverse
-IF /I "%char%"=="k" CALL :FuncRun TrainTimetable
+IF /I "%char%"=="a" GOTO :Current
+IF /I "%char%"=="z" (
+  FOR %%A IN (%map%) DO (
+    FOR /F "tokens=1,2 delims=-" %%B IN ("%%A") DO CALL :FuncRun %%C
+  )
+)
 IF /I "%char%"=="p" PAUSE
 IF /I "%char%"=="q" GOTO :EOF
 GOTO :ChoiceInnerLoop
+
+
+:Current
+CALL SET Current=%%map:*%Current%-=%%
+SET Current=%Current:;=&rem.%
+CALL :FuncRun %Current%
+GOTO :EOF
 
 
 :FuncBuild
@@ -70,6 +75,7 @@ GOTO :EOF
 
 
 :FuncRun
+ECHO Running %1
 IF "%consoleInput%"=="1" (
   start bin\GoogleCodeJam.exe %1
 ) ELSE (

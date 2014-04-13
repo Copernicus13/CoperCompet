@@ -24,6 +24,9 @@
     <Filter Include="2. Source files\Practice">
       <UniqueIdentifier>{21f0aaf6-cb68-48f1-bc33-98ebaed6b7e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2. Source files\2014">
+      <UniqueIdentifier>{117f03fe-c8b3-47c4-a62e-5965ac2c0ed1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -91,6 +94,18 @@
     </ClCompile>
     <ClCompile Include="src\HexagonGame.cpp">
       <Filter>2. Source files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MagicTrick.cpp">
+      <Filter>2. Source files\2014</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CookieClickerAlpha.cpp">
+      <Filter>2. Source files\2014</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MinesweeperMaster.cpp">
+      <Filter>2. Source files\2014</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeceitfulWar.cpp">
+      <Filter>2. Source files\2014</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
