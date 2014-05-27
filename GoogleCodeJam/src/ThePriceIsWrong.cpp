@@ -1,3 +1,5 @@
+#if 0
+
 #include "Prototypes.h"
 
 typedef std::vector<string> lists_t;
@@ -82,3 +84,117 @@ void GoogleCodeJam::Practice::Beta2008::ThePriceIsWrong()
 		std::cout << std::endl;
 	}
 }
+
+#else
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <map>
+#include <set>
+#include <cmath>
+#include <queue>
+#include <vector>
+#include <string>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cassert>
+#include <numeric>
+#include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <ctime>
+
+#include "Prototypes.h"
+
+using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef vector<string> vs;
+typedef vector<double> vd;
+
+#define For(i,a,b) for (int i(a),_b(b); i <= _b; ++i)
+#define Ford(i,a,b) for (int i(a),_b(b); i >= _b; --i)
+#define Rep(i,n) for (int i(0),_n(n); i < _n; ++i)
+#define Repd(i,n) for (int i((n)-1); i >= 0; --i)
+#define Fill(a,c) memset(&a, c, sizeof(a))
+#define MP(x, y) make_pair((x), (y))
+#define All(v) (v).begin(), (v).end()
+
+template<typename T, typename S> T cast(S s) {
+	stringstream ss;
+	ss << s;
+	T res;
+	ss >> res;
+	return res;
+}
+
+template<typename T> inline T sqr(T a) { return a*a; }
+template<typename T> inline int Size(const T& c) { return (int)c.size(); }
+template<typename T> inline void checkMin(T& a, T b) { if (b < a) a = b; }
+template<typename T> inline void checkMax(T& a, T b) { if (b > a) a = b; }
+template<typename T> inline bool isSet(T number, int bit) { return (number&(T(1)<<bit)) != 0; }
+
+char buf[1024*1024];
+int n;
+string name[64];
+int price[64];
+bool exist[64];
+int dp[64];
+
+int maxSubseq() {
+	int res = 0;
+	Rep(i, n) {
+		if (exist[i]) {
+			dp[i] = 1;
+			Rep(j, i)
+				if (exist[j] && price[j] < price[i])
+					checkMax(dp[i], 1+dp[j]);
+			checkMax(res, dp[i]);
+		}
+	}
+	return res;
+}
+
+void solve() {
+	scanf(" ");
+	gets(buf);
+	n = 0;
+	string s(buf);
+	istringstream iss(s);
+	string s2;
+	while (iss >> s2) 
+		name[n++] = s2;
+	Rep(i, n)
+		scanf("%d", &price[i]);
+	Rep(i, n)
+		exist[i] = true;
+	int k = maxSubseq();
+	map<string,int> m;
+	Rep(i, n)
+		m[name[i]] = i;
+	for (map<string,int>::iterator it = m.begin(); it != m.end(); ++it) {
+		exist[(*it).second] = false;
+		if (maxSubseq() == k)
+			printf(" %s", (*it).first.c_str());
+		else
+			exist[(*it).second] = true;
+	}
+	printf("\n");
+}
+
+void GoogleCodeJam::Practice::Beta2008::ThePriceIsWrong()
+{
+	int n;
+	scanf("%d", &n);
+	For(test, 1, n) {
+		printf("Case #%d:", test);
+		solve();
+	}
+
+	exit(0);
+}
+
+
+#endif

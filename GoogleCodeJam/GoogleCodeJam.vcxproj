@@ -79,14 +79,18 @@
     <ClCompile Include="src\AlienLanguage.cpp" />
     <ClCompile Include="src\AlienNumbers.cpp" />
     <ClCompile Include="src\AlwaysTurnLeft.cpp" />
+    <ClCompile Include="src\ChargingChaos.cpp" />
     <ClCompile Include="src\CookieClickerAlpha.cpp" />
     <ClCompile Include="src\Cycles.cpp" />
     <ClCompile Include="src\DeceitfulWar.cpp" />
     <ClCompile Include="src\EggDrop.cpp" />
     <ClCompile Include="src\FlySwatter.cpp" />
+    <ClCompile Include="src\FullBinaryTree.cpp" />
     <ClCompile Include="src\HexagonGame.cpp" />
     <ClCompile Include="src\MagicTrick.cpp" />
     <ClCompile Include="src\MinesweeperMaster.cpp" />
+    <ClCompile Include="src\NewLotteryGame.cpp" />
+    <ClCompile Include="src\ProperShuffle.cpp" />
     <ClCompile Include="src\RandomRoute.cpp" />
     <ClCompile Include="src\ReverseWords.cpp" />
     <ClCompile Include="src\SavingUniverse.cpp" />
@@ -100,6 +104,7 @@
     <ClCompile Include="src\OldMagician.cpp" />
     <ClCompile Include="src\SquareFields.cpp" />
     <ClCompile Include="src\ThePriceIsWrong.cpp" />
+    <ClCompile Include="src\TheRepeater.cpp" />
     <ClCompile Include="src\TrainTimetable.cpp" />
     <ClCompile Include="src\TriangleTrilemma.cpp" />
   </ItemGroup>

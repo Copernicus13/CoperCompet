@@ -1,9 +1,3 @@
-#include <string>
-#include <iostream>
-#include <sstream>
-#include <stack>
-#include <cassert>
-
 #include "Prototypes.h"
 
 void GoogleCodeJam::Y2010::Africa::ReverseWords()

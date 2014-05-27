@@ -9,6 +9,8 @@
 #include <map>
 #include <array>
 #include <deque>
+#include <queue>
+#include <stack>
 #include <ctime>
 #include <algorithm>
 #include <cmath>
@@ -104,6 +106,20 @@ void CookieClickerAlpha();
 void MinesweeperMaster();
 void DeceitfulWar();
 } // namespace Qualification
+
+namespace Round1A
+{
+void ChargingChaos();
+void FullBinaryTree();
+void ProperShuffle();
+} // namespace Round1A
+
+namespace Round1B
+{
+void TheRepeater();
+void NewLotteryGame();
+//void ();
+} // namespace Round1B
 
 } // namespace Y2014
 

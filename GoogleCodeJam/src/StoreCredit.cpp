@@ -1,6 +1,3 @@
-#include <iostream>
-#include <cassert>
-
 #include "Prototypes.h"
 
 static int* GetResult(const int c, const int i, const int p[]);

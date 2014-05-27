@@ -107,6 +107,21 @@
     <ClCompile Include="src\DeceitfulWar.cpp">
       <Filter>2. Source files\2014</Filter>
     </ClCompile>
+    <ClCompile Include="src\ChargingChaos.cpp">
+      <Filter>2. Source files\2014</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FullBinaryTree.cpp">
+      <Filter>2. Source files\2014</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProperShuffle.cpp">
+      <Filter>2. Source files\2014</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TheRepeater.cpp">
+      <Filter>2. Source files\2014</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NewLotteryGame.cpp">
+      <Filter>2. Source files\2014</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Prototypes.h">

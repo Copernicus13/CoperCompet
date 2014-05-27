@@ -15,7 +15,7 @@ static const funct tabfct[] =
 		{ GoogleCodeJam::Practice::Problems::AlwaysTurnLeft, "AlwaysTurnLeft" },	// done
 		{ GoogleCodeJam::Practice::Problems::EggDrop, "EggDrop" },					// done with help
 		{ GoogleCodeJam::Practice::Problems::ShoppingPlan, "ShoppingPlan" },		// done with help
-		{ GoogleCodeJam::Practice::Beta2008::TriangleTrilemma, "TriangleTrilemma" },
+		{ GoogleCodeJam::Practice::Beta2008::TriangleTrilemma, "TriangleTrilemma" },	// done
 		{ GoogleCodeJam::Practice::Beta2008::ThePriceIsWrong, "ThePriceIsWrong" },
 		{ GoogleCodeJam::Practice::Beta2008::RandomRoute, "RandomRoute" },
 		{ GoogleCodeJam::Practice::Beta2008::HexagonGame, "HexagonGame" },
@@ -32,10 +32,16 @@ static const funct tabfct[] =
 		{ GoogleCodeJam::Y2010::Africa::ReverseWords, "ReverseWords" },				// done
 		{ GoogleCodeJam::Y2010::Africa::StoreCredit, "StoreCredit" },				// done
 		{ GoogleCodeJam::Y2010::Africa::T9Spelling, "T9Spelling" },					// done
-		{ GoogleCodeJam::Y2014::Qualification::MagicTrick, "MagicTrick" },
-		{ GoogleCodeJam::Y2014::Qualification::CookieClickerAlpha, "CookieClickerAlpha" },
+		{ GoogleCodeJam::Y2014::Qualification::MagicTrick, "MagicTrick" },			// done
+		{ GoogleCodeJam::Y2014::Qualification::CookieClickerAlpha, "CookieClickerAlpha" },	// done
 		{ GoogleCodeJam::Y2014::Qualification::MinesweeperMaster, "MinesweeperMaster" },
-		{ GoogleCodeJam::Y2014::Qualification::DeceitfulWar, "DeceitfulWar" }
+		{ GoogleCodeJam::Y2014::Qualification::DeceitfulWar, "DeceitfulWar" },
+		{ GoogleCodeJam::Y2014::Round1A::ChargingChaos, "ChargingChaos" },
+		{ GoogleCodeJam::Y2014::Round1A::FullBinaryTree, "FullBinaryTree" },
+		{ GoogleCodeJam::Y2014::Round1A::ProperShuffle, "ProperShuffle" },
+		{ GoogleCodeJam::Y2014::Round1B::TheRepeater, "TheRepeater" },
+		{ GoogleCodeJam::Y2014::Round1B::NewLotteryGame, "NewLotteryGame" },
+		//{ GoogleCodeJam::Y2014::Round1B::, "" }
 	};
 
 class GetFunc

@@ -16,14 +16,14 @@ SET map=%map%ca-AlienLanguage;
 REM 2010 Africa
 SET map=%map%da-ReverseWords;db-StoreCredit;dc-T9Spelling
 REM 2014
-SET map=%map%ha-MagicTrick;hb-CookieClickerAlpha;hc-MinesweeperMaster;hd-DeceitfulWar
+SET map=%map%ha-MagicTrick;hb-CookieClickerAlpha;hc-MinesweeperMaster;hd-DeceitfulWar;he-TheRepeater;hf-NewLotteryGame
 
 ECHO €ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
 ECHO €                            ˛˛˛˛˛ ∏Coper ˛˛˛˛˛                             €
 ECHO €‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
 
 SET Choice=a
-SET Current=hb
+SET Current=he
 
 SET MsBuildCmd=%WinDir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
 SET MsBuildArgs=/nologo /v:q

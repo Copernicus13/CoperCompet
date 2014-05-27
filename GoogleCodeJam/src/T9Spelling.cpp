@@ -1,8 +1,3 @@
-#include <string>
-#include <iostream>
-#include <sstream>
-#include <cassert>
-
 #include "Prototypes.h"
 
 static const char* const tab[27] =
