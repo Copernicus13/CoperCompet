@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{56076279-F064-4B68-A50C-41016B7A1CCC}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{BFDEC4A1-A4A9-4AA2-8262-FB5F7B0EC2FC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleDev._2015_03</RootNamespace>
-    <AssemblyName>BattleDev-2015-03</AssemblyName>
+    <RootNamespace>BattleDev</RootNamespace>
+    <AssemblyName>BattleDevLauncher</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,19 +32,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
+    <StartupObject>BattleDev.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exo 1.cs" />
-    <Compile Include="Exo 2.cs" />
-    <Compile Include="Exo 3.cs" />
-    <Compile Include="Exo 4.cs" />
-    <Compile Include="Exo 5.cs" />
-    <Compile Include="Exo 6.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2015-03\2015-03.csproj">
+      <Project>{56076279-f064-4b68-a50c-41016b7a1ccc}</Project>
+      <Name>2015-03</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2015-11\2015-11.csproj">
+      <Project>{245cfdd7-a762-4b5e-af16-a0d0e3516bd4}</Project>
+      <Name>2015-11</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

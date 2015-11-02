@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <StartupObject>BattleDev.Program</StartupObject>
-  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{245CFDD7-A762-4B5E-AF16-A0D0E3516BD4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BattleDev._2015_11</RootNamespace>
     <AssemblyName>BattleDev-2015-11</AssemblyName>
@@ -39,14 +36,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exo 2.cs" />
-    <Compile Include="Exo 5.cs" />
-    <Compile Include="Exo 7.cs" />
-    <Compile Include="Exo 6.cs" />
-    <Compile Include="Exo 4.cs" />
-    <Compile Include="Exo 3.cs" />
     <Compile Include="Exo 1.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Exo 2.cs" />
+    <Compile Include="Exo 3.cs" />
+    <Compile Include="Exo 4.cs" />
+    <Compile Include="Exo 5.cs" />
+    <Compile Include="Exo 6.cs" />
+    <Compile Include="Exo 7.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
