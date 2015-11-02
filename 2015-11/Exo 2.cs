@@ -2,5 +2,8 @@
 {
     public class Exo2
     {
+        public Exo2()
+        {
+        }
     }
 }
