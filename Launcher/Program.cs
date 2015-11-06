@@ -4,7 +4,7 @@
     {
         public static void Main(string[] args)
         {
-            var exo = new _2015_03.Exo2();
+            var exo = new _2015_11.Exo6();
         }
     }
 }

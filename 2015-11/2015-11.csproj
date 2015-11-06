@@ -42,7 +42,6 @@
     <Compile Include="Exo 4.cs" />
     <Compile Include="Exo 5.cs" />
     <Compile Include="Exo 6.cs" />
-    <Compile Include="Exo 7.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
