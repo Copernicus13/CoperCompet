@@ -7,7 +7,7 @@ namespace AdventOfCode.Launcher
     {
         public static void Main(string[] args)
         {
-            new _2015.Day4(Part.Part2);
+            new _2015.Day5(Part.Part2);
             Console.Write("Appuyez sur une touche pour continuer…");
             Console.ReadKey();
         }
