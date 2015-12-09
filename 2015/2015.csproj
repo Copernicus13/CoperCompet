@@ -33,6 +33,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day8.cs" />
     <Compile Include="Day7.cs" />
     <Compile Include="Day6.cs" />
     <Compile Include="Day5.cs" />
