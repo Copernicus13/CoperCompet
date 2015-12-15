@@ -4,7 +4,7 @@ using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
-    public class Day3
+    public class Day03
     {
         private struct Point
         {
@@ -32,7 +32,7 @@ namespace AdventOfCode._2015
 
         private IDictionary<Point, int> _map;
 
-        public Day3(Part p)
+        public Day03(Part p)
         {
             Point current = new Point(0, 0);
             Point current2 = new Point(0, 0);

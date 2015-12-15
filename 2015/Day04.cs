@@ -5,9 +5,9 @@ using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
-    public class Day4
+    public class Day04
     {
-        public Day4(Part p)
+        public Day04(Part p)
         {
             string line = Console.ReadLine();
             long result;

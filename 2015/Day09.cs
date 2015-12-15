@@ -3,7 +3,7 @@ using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
-    public class Day9
+    public class Day09
     {
         private enum City
         {
@@ -19,7 +19,7 @@ namespace AdventOfCode._2015
 
         private readonly int[,] _map = new int[8, 8];
 
-        public Day9(Part p)
+        public Day09(Part p)
         {
             string line;
             while (!string.IsNullOrEmpty(line = Console.ReadLine()))

@@ -5,11 +5,11 @@ using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
-    public class Day7
+    public class Day07
     {
         private readonly IDictionary<string, ushort> dict = new Dictionary<string, ushort>();
 
-        public Day7(Part p)
+        public Day07(Part p)
         {
             if (p == Part.Part2)
                 dict["b"] = 956;

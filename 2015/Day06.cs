@@ -4,12 +4,12 @@ using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
-    public class Day6
+    public class Day06
     {
         private bool[,] _grid1;
         private long[,] _grid2;
 
-        public Day6(Part p)
+        public Day06(Part p)
         {
             _grid1 = new bool[1000, 1000];
             _grid2 = new long[1000, 1000];

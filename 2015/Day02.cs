@@ -3,9 +3,9 @@ using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
-    public class Day2
+    public class Day02
     {
-        public Day2(Part p)
+        public Day02(Part p)
         {
             long result = 0;
             string line;
