@@ -25,13 +25,13 @@ namespace AdventOfCode._2015
             Console.WriteLine(result);
         }
 
-        private bool isClean(string line)
+        private static bool isClean(string line)
         {
             return !line.Contains("ab") && !line.Contains("cd") &&
                 !line.Contains("pq") && !line.Contains("xy");
         }
 
-        private bool hasDoubleLetter(string line)
+        private static bool hasDoubleLetter(string line)
         {
             char last = '\0';
             foreach (char c in line)
@@ -43,7 +43,7 @@ namespace AdventOfCode._2015
             return false;
         }
 
-        private bool has3Vowels(string line)
+        private static bool has3Vowels(string line)
         {
             int vowels = 0;
             foreach (char c in line)
@@ -64,7 +64,7 @@ namespace AdventOfCode._2015
             return false;
         }
 
-        private bool hasDoublePairOfLetter(string line)
+        private static bool hasDoublePairOfLetter(string line)
         {
             for (int i = 0; i < line.Length - 3; ++i)
             {
@@ -75,7 +75,7 @@ namespace AdventOfCode._2015
             return false;
         }
 
-        private bool hasRepeatedLetter(string line)
+        private static bool hasRepeatedLetter(string line)
         {
             for (int i = 0; i < line.Length - 2; ++i)
             {

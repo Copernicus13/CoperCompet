@@ -72,7 +72,7 @@ namespace AdventOfCode._2015
             return isDigit(v) ? ushort.Parse(v) : dict[v];
         }
 
-        private bool isDigit(string v)
+        private static bool isDigit(string v)
         {
             return v.All(c => char.IsDigit(c));
         }
