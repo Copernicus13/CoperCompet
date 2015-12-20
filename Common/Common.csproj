@@ -37,6 +37,7 @@
     <Compile Include="Combinations.cs" />
     <Compile Include="Permutations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Maths.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
