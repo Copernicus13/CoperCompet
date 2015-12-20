@@ -30,7 +30,7 @@ namespace AdventOfCode._2015
             }
         }
 
-        private IDictionary<Point, int> _map;
+        private readonly IDictionary<Point, int> _map;
 
         public Day03(Part p)
         {

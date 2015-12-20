@@ -6,8 +6,8 @@ namespace AdventOfCode._2015
 {
     public class Day06
     {
-        private bool[,] _grid1;
-        private long[,] _grid2;
+        private readonly bool[,] _grid1;
+        private readonly long[,] _grid2;
 
         public Day06(Part p)
         {
