@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFDEC4A1-A4A9-4AA2-8262-FB5F7B0EC2FC}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{7B667972-7BD1-4B97-B942-CB2DDBEEE47A}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleDev</RootNamespace>
-    <AssemblyName>BattleDevLauncher</AssemblyName>
+    <RootNamespace>BattleDev._2016_03</RootNamespace>
+    <AssemblyName>2016-03</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,46 +20,26 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>BattleDev.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Exo 5.cs" />
+    <Compile Include="Exo 4.cs" />
+    <Compile Include="Exo 3.cs" />
+    <Compile Include="Exo 2.cs" />
+    <Compile Include="Exo 1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\2015-03\2015-03.csproj">
-      <Project>{56076279-f064-4b68-a50c-41016b7a1ccc}</Project>
-      <Name>2015-03</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\2015-11\2015-11.csproj">
-      <Project>{245cfdd7-a762-4b5e-af16-a0d0e3516bd4}</Project>
-      <Name>2015-11</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\2016-03\2016-03.csproj">
-      <Project>{7b667972-7bd1-4b97-b942-cb2ddbeee47a}</Project>
-      <Name>2016-03</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

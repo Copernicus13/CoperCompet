@@ -1,10 +1,14 @@
-﻿namespace BattleDev
+﻿using System;
+
+namespace BattleDev
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            var exo = new _2015_11.Exo6();
+            // ReSharper disable once ObjectCreationAsStatement
+            new _2016_03.Exo5();
+            Console.ReadLine();
         }
     }
 }
