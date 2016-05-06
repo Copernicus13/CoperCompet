@@ -27,6 +27,9 @@
     <Filter Include="2. Source files\2014">
       <UniqueIdentifier>{117f03fe-c8b3-47c4-a62e-5965ac2c0ed1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2. Source files\2015">
+      <UniqueIdentifier>{ae902ea1-49df-42ef-a70b-d25126119cce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -121,6 +124,45 @@
     </ClCompile>
     <ClCompile Include="src\NewLotteryGame.cpp">
       <Filter>2. Source files\2014</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StandingOvation.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InfiniteHouseOfPancakes.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dijkstra.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OminousOmino.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MushroomMonster.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Haircut.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Logging.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CounterCulture.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NoisyNeighbors.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HikingDeer.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LessMoneyMoreProblems.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TypewriterMonkey.cpp">
+      <Filter>2. Source files\2015</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Brattleship.cpp">
+      <Filter>2. Source files\2015</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

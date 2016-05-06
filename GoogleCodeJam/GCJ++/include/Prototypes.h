@@ -125,4 +125,40 @@ void NewLotteryGame();
 
 
 
+namespace Y2015
+{
+
+namespace Qualification
+{
+void StandingOvation();
+void InfiniteHouseOfPancakes();
+void Dijkstra();
+void OminousOmino();
+} // namespace Qualification
+
+namespace Round1A
+{
+void MushroomMonster();
+void Haircut();
+void Logging();
+} // namespace Round1A
+
+namespace Round1B
+{
+void CounterCulture();
+void NoisyNeighbors();
+void HikingDeer();
+} // namespace Round1B
+
+namespace Round1C
+{
+void Brattleship();
+void TypewriterMonkey();
+void LessMoneyMoreProblems();
+} // namespace Round1C
+
+} // namespace Y2015
+
+
+
 } // namespace GoogleCodeJam

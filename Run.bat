@@ -14,16 +14,19 @@ SET map=%map%ba-SavingUniverse;bb-TrainTimetable;bc-FlySwatter;bd-MinimumScalarP
 REM 2009
 SET map=%map%ca-AlienLanguage;
 REM 2010 Africa
-SET map=%map%da-ReverseWords;db-StoreCredit;dc-T9Spelling
+SET map=%map%da-ReverseWords;db-StoreCredit;dc-T9Spelling;
 REM 2014
-SET map=%map%ha-MagicTrick;hb-CookieClickerAlpha;hc-MinesweeperMaster;hd-DeceitfulWar;he-TheRepeater;hf-NewLotteryGame
+SET map=%map%ha-MagicTrick;hb-CookieClickerAlpha;hc-MinesweeperMaster;hd-DeceitfulWar;he-TheRepeater;hf-NewLotteryGame;
+REM 2015
+SET map=%map%ia-StandingOvation;ib-InfiniteHouseOfPancakes;ic-Dijkstra;id-OminousOmino;ie-MushroomMonster;if-Haircut;
+SET map=%map%ig-Logging;ih-CounterCulture;ii-NoisyNeighbors;ij-HikingDeer;ik-a;il-b;im-c;in-d
 
 ECHO €ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
 ECHO €                            ˛˛˛˛˛ ∏Coper ˛˛˛˛˛                             €
 ECHO €‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
 
 SET Choice=a
-SET Current=he
+SET Current=ik
 
 SET MsBuildCmd=%WinDir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
 SET MsBuildArgs=/nologo /v:q

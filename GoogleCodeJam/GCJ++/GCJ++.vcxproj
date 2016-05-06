@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -9,23 +9,27 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E29BE9F-AEA5-4D37-90E9-CED98B83B86B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GoogleCodeJam</RootNamespace>
-    <ProjectName>GoogleCodeJam</ProjectName>
+    <ProjectName>GCJ++</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
   <PropertyGroup Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Ansi</CharacterSet>
@@ -34,17 +38,14 @@
     <WholeProgramOptimization Condition="'$(Configuration)'=='Release'">true</WholeProgramOptimization>
     <LinkIncremental Condition="'$(Configuration)'=='Debug'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)'=='Release'">false</LinkIncremental>
-    <IntDir>$(SolutionDir)bin\obj\$(ProjectName)\</IntDir>
-    <OutDir>$(SolutionDir)bin\</OutDir>
-    <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
-    <OutputPath>$(OutDir)</OutputPath>
-    <TargetDir>$(SolutionDir)bin\</TargetDir>
-    <TargetPath>$(TargetDir)$(TargetFileName)</TargetPath>
-    <LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand>
-    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
-    <LastBuildState>$(IntDir)$(ProjectName).lastbuildstate</LastBuildState>
-    <LastBuildUnsuccessful>$(IntDir)$(ProjectName).unsuccessfulbuild</LastBuildUnsuccessful>
+    <PlatformToolset>v140</PlatformToolset>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
   </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup>
     <ClCompile>
@@ -76,25 +77,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Brattleship.cpp" />
     <ClCompile Include="src\AlienLanguage.cpp" />
     <ClCompile Include="src\AlienNumbers.cpp" />
     <ClCompile Include="src\AlwaysTurnLeft.cpp" />
+    <ClCompile Include="src\TypewriterMonkey.cpp" />
+    <ClCompile Include="src\LessMoneyMoreProblems.cpp" />
+    <ClCompile Include="src\NoisyNeighbors.cpp" />
+    <ClCompile Include="src\HikingDeer.cpp" />
+    <ClCompile Include="src\Haircut.cpp" />
+    <ClCompile Include="src\CounterCulture.cpp" />
+    <ClCompile Include="src\Logging.cpp" />
     <ClCompile Include="src\ChargingChaos.cpp" />
     <ClCompile Include="src\CookieClickerAlpha.cpp" />
     <ClCompile Include="src\Cycles.cpp" />
     <ClCompile Include="src\DeceitfulWar.cpp" />
+    <ClCompile Include="src\Dijkstra.cpp" />
     <ClCompile Include="src\EggDrop.cpp" />
     <ClCompile Include="src\FlySwatter.cpp" />
     <ClCompile Include="src\FullBinaryTree.cpp" />
     <ClCompile Include="src\HexagonGame.cpp" />
+    <ClCompile Include="src\InfiniteHouseOfPancakes.cpp" />
     <ClCompile Include="src\MagicTrick.cpp" />
     <ClCompile Include="src\MinesweeperMaster.cpp" />
+    <ClCompile Include="src\MushroomMonster.cpp" />
     <ClCompile Include="src\NewLotteryGame.cpp" />
+    <ClCompile Include="src\OminousOmino.cpp" />
     <ClCompile Include="src\ProperShuffle.cpp" />
     <ClCompile Include="src\RandomRoute.cpp" />
     <ClCompile Include="src\ReverseWords.cpp" />
     <ClCompile Include="src\SavingUniverse.cpp" />
     <ClCompile Include="src\ShoppingPlan.cpp" />
+    <ClCompile Include="src\StandingOvation.cpp" />
     <ClCompile Include="src\StoreCredit.cpp" />
     <ClCompile Include="src\T9Spelling.cpp" />
     <ClCompile Include="src\Milkshakes.cpp" />
@@ -111,4 +125,7 @@
   <ItemGroup>
     <ClInclude Include="include\Prototypes.h" />
   </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>

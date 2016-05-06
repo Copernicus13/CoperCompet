@@ -12,10 +12,10 @@
 *.ilk
 *.log
 [Bb]in
-[Dd]ebug*/
 obj/
-ipch/
+[Dd]ebug*/
 [Rr]elease*/
+ipch/
 _ReSharper*/
 GoogleCodeJam.sdf
 GoogleCodeJam.opensdf

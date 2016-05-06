@@ -41,7 +41,19 @@ static const funct tabfct[] =
 		{ GoogleCodeJam::Y2014::Round1A::ProperShuffle, "ProperShuffle" },
 		{ GoogleCodeJam::Y2014::Round1B::TheRepeater, "TheRepeater" },
 		{ GoogleCodeJam::Y2014::Round1B::NewLotteryGame, "NewLotteryGame" },
-		//{ GoogleCodeJam::Y2014::Round1B::, "" }
+		{ GoogleCodeJam::Y2015::Qualification::StandingOvation, "StandingOvation" },
+		{ GoogleCodeJam::Y2015::Qualification::InfiniteHouseOfPancakes, "InfiniteHouseOfPancakes" },
+		{ GoogleCodeJam::Y2015::Qualification::Dijkstra, "Dijkstra" },
+		{ GoogleCodeJam::Y2015::Qualification::OminousOmino, "OminousOmino" },
+		{ GoogleCodeJam::Y2015::Round1A::MushroomMonster, "MushroomMonster" },
+		{ GoogleCodeJam::Y2015::Round1A::Haircut, "Haircut" },
+		{ GoogleCodeJam::Y2015::Round1A::Logging, "Logging" },
+		{ GoogleCodeJam::Y2015::Round1B::CounterCulture, "CounterCulture" },
+		{ GoogleCodeJam::Y2015::Round1B::NoisyNeighbors, "NoisyNeighbors" },
+		{ GoogleCodeJam::Y2015::Round1B::HikingDeer, "HikingDeer" },
+		{ GoogleCodeJam::Y2015::Round1C::Brattleship, "Brattleship" },
+		{ GoogleCodeJam::Y2015::Round1C::TypewriterMonkey, "TypewriterMonkey" },
+		{ GoogleCodeJam::Y2015::Round1C::LessMoneyMoreProblems, "LessMoneyMoreProblems" }
 	};
 
 class GetFunc

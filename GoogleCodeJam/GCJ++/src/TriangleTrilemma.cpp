@@ -16,8 +16,8 @@ inline static double myacos(T x) { return std::acos(static_cast<double>(x)) * 18
 template<typename T>
 inline static double mypow(T x, int y) { return std::pow(static_cast<double>(x), y); }
 
-template<typename T>
-inline static bool isnan(T x) { return x != x; }
+//template<typename T>
+//inline static bool isnan(T x) { return x != x; }
 
 void GoogleCodeJam::Practice::Beta2008::TriangleTrilemma()
 {
