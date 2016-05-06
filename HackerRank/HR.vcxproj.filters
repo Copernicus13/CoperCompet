@@ -22,11 +22,26 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\1. StandardDeviation.cpp">
-      <Filter>2. Source files\AI\Probability &amp; Statistics – Foundations</Filter>
-    </ClCompile>
     <ClCompile Include="src\Main.cpp">
       <Filter>2. Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Day 1. StandardDeviation2.cpp">
+      <Filter>2. Source files\AI\Probability &amp; Statistics – Foundations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Day 1. StandardDeviation1.cpp">
+      <Filter>2. Source files\AI\Probability &amp; Statistics – Foundations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Day 2. BasicProbability3.cpp">
+      <Filter>2. Source files\AI\Probability &amp; Statistics – Foundations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Day 2. BasicProbability1.cpp">
+      <Filter>2. Source files\AI\Probability &amp; Statistics – Foundations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Day 2. BasicProbability2.cpp">
+      <Filter>2. Source files\AI\Probability &amp; Statistics – Foundations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Day 2. BasicProbability4.cpp">
+      <Filter>2. Source files\AI\Probability &amp; Statistics – Foundations</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

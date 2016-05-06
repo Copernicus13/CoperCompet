@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <cstring>
+#include <algorithm>
 
 #include "Prototypes.h"
 
@@ -11,7 +12,12 @@ typedef struct { PtrFonct_t func; const char* name; } funct;
 
 static const funct tabfct[] =
 {
-	{ HackerRank::AI::ProbabilityAndStatistics::StandardDeviation , "StandardDeviation" }
+	{ HackerRank::AI::ProbabilityAndStatistics::StandardDeviation1, "StandardDeviation1" },
+	{ HackerRank::AI::ProbabilityAndStatistics::StandardDeviation2, "StandardDeviation2" },
+	{ HackerRank::AI::ProbabilityAndStatistics::BasicProbability1, "BasicProbability1" },
+	{ HackerRank::AI::ProbabilityAndStatistics::BasicProbability2, "BasicProbability2" },
+	{ HackerRank::AI::ProbabilityAndStatistics::BasicProbability3, "BasicProbability3" },
+	{ HackerRank::AI::ProbabilityAndStatistics::BasicProbability4, "BasicProbability4" },
 };
 
 class GetFunc
