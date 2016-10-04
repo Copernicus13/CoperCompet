@@ -5,7 +5,7 @@ typedef std::vector<unsigned int> tab_t;
 
 static l_int solve(tab_t tab, l_int n)
 {
-	unsigned int b = tab.size();
+	unsigned int b = static_cast<unsigned int>(tab.size());
 
 	l_int time (0), sum (0);
 	// Naive way

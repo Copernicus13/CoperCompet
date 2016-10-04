@@ -25,7 +25,7 @@ void GoogleCodeJam::Practice::Problems::AlienNumbers()
 		float base2 (static_cast<float>(s3.size()));
 		for (unsigned int b (0); b < s1.size(); ++b)
 		{
-			total += s2.find_first_of(s1[b]) *
+			total += static_cast<int>(s2.find_first_of(s1[b])) *
 				static_cast<int>(std::powl(base1, static_cast<int>(s1.size()) - b - 1));
 		}
 

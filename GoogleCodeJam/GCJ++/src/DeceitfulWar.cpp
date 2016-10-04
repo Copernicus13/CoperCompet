@@ -31,7 +31,7 @@ unsigned int war(const vect_t &naomi, const vect_t &ken)
 
 unsigned int deceitfulwar(vect_t &naomi, vect_t &ken)
 {
-	unsigned int res (naomi.size());
+	unsigned int res (static_cast<int>(naomi.size()));
 
 	//vect_t naomiv (naomi.begin(), naomi.end()),
 	//	   kenv (ken.begin(), ken.end());

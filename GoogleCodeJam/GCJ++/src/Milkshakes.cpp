@@ -22,7 +22,7 @@ static int getmalted(list_t l)
 	{
 		if (l[x].second == 1)
 		{
-			return x;
+			return static_cast<int>(x);
 		}
 	}
 	return -1;

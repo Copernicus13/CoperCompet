@@ -108,7 +108,7 @@ static void displaymaze(tab_t* tab)
 	tab_t::size_type x;
 	for (x = SIZE_MAT; tabd[x][0]; --x)
 		;
-	int saved_x (++x);
+	int saved_x (static_cast<int>(++x));
 	for (tab_t::value_type::size_type y (0); y < SIZE_MAT && tabd[saved_x][y]; ++y)
 	{
 		for (x = saved_x; tabd[x][0]; ++x)

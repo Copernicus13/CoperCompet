@@ -5,7 +5,7 @@ typedef std::pair<unsigned int, unsigned int> pair_t;
 
 static pair_t solve(tab_t tab)
 {
-	unsigned int n = tab.size();
+	unsigned int n = static_cast<unsigned int>(tab.size());
 	unsigned int sum1 = 0, sum2 = 0, diff = 0;
 	for (unsigned int a (0); a < n - 1; ++a)
 	{

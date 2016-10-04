@@ -39,7 +39,7 @@ void GoogleCodeJam::Practice::Beta2008::ThePriceIsWrong()
 			guesses.push_back(i);
 		} while (!iss.eof());
 
-		unsigned int sz (products.size());
+		unsigned int sz (static_cast<unsigned int>(products.size()));
 		tab_t F;
 		listi_t v;
 		v.reserve(sz);
@@ -53,7 +53,8 @@ void GoogleCodeJam::Practice::Beta2008::ThePriceIsWrong()
 				F[b][c] = b <= c ? (guesses[b] <= guesses[c]) : (guesses[b] > guesses[c]);
 
 		for (unsigned int b (0); b < sz; ++b)
-			v.push_back(std::count_if(F[b].begin(), F[b].begin() + sz, [](bool &c) { return !c; }));
+			v.push_back(static_cast<int>(
+				std::count_if(F[b].begin(), F[b].begin() + sz, [](bool &c) { return !c; })));
 
 		int mx (64);
 		bool bl (false);
