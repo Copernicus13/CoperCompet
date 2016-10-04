@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GoogleCodeJam.Y2016.Qualification
+namespace GoogleCodeJam._2016.Qualification
 {
     public class CountingSheep
     {

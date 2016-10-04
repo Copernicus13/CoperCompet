@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoogleCodeJam.Y2016.Qualification
+namespace GoogleCodeJam._2016.Qualification
 {
     public class CoinJam
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GoogleCodeJam.Y2016.Round1a
+namespace GoogleCodeJam._2016.Round1a
 {
     public class RankAndFile
     {
@@ -23,7 +23,7 @@ namespace GoogleCodeJam.Y2016.Round1a
                 }
 
                 var res = list.GroupBy(c => c)
-                    .Where(grp => grp.Count() %2 == 1)
+                    .Where(grp => grp.Count() % 2 == 1)
                     .OrderBy(grp => grp.Key)
                     .Select(grp => grp.Key)
                     .ToList();

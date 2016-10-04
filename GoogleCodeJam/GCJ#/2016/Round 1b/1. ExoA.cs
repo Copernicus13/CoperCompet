@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace GoogleCodeJam.Y2016.Round1b
+namespace GoogleCodeJam._2016.Round1b
 {
     public class ExoA
     {

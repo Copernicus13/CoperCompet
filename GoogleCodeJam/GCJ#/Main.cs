@@ -1,5 +1,5 @@
 ﻿using System;
-using GoogleCodeJam.Y2016.Round1b;
+using GoogleCodeJam._2016.Round1b;
 
 namespace GoogleCodeJam.Launcher
 {

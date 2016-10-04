@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace GoogleCodeJam.Y2016.Round1a
+namespace GoogleCodeJam._2016.Round1a
 {
     public class TheLastWord
     {
