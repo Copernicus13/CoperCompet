@@ -7,7 +7,7 @@ namespace BattleDev
         public static void Main(string[] args)
         {
             // ReSharper disable once ObjectCreationAsStatement
-            new _2016_03.Exo5();
+            new _2016_11.Exo1();
             Console.ReadLine();
         }
     }
