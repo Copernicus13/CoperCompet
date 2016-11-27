@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AdventOfCode.Common;
+using AdventOfCode.Common.Combinatorics;
 
 namespace AdventOfCode._2015
 {
@@ -14,7 +15,7 @@ namespace AdventOfCode._2015
             while (!string.IsNullOrEmpty(line = Console.ReadLine()))
                 list.Add(int.Parse(line));
 
-            var powerSet = Combinations.FastPowerSet(list.ToArray());
+            var powerSet = Combinations<int>.FastPowerSet(list.ToArray());
 
             int result = 0;
             if (p == Part.Part1)

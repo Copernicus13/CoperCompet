@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using AdventOfCode.Common;
+using AdventOfCode.Common.Combinatorics;
 
 namespace AdventOfCode._2015
 {
@@ -27,7 +28,7 @@ namespace AdventOfCode._2015
             {
                 Thread.Sleep(5000);
                 GC.Collect(int.MaxValue, GCCollectionMode.Forced, true, true);
-                var powerSet = Combinations.FastGetAll(f, i);
+                var powerSet = Combinations<int>.FastGetAll(f, i);
                 for (int k = 0; k < powerSet.Length; ++k)
                     if (powerSet[k] != null &&
                         powerSet[k].ToList().Aggregate(0, (a, b) => a + b, c => c == aim))

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using AdventOfCode.Common;
+using AdventOfCode.Common.Combinatorics;
 
 namespace AdventOfCode._2015
 {
@@ -41,7 +42,7 @@ namespace AdventOfCode._2015
             do
             {
                 best = Math.Max(Calc(perm), best);
-            } while (Permutations.GetNext(perm));
+            } while (Permutations<int>.GetNext(perm));
 
             Console.WriteLine(best);
         }
