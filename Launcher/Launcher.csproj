@@ -50,6 +50,10 @@
       <Project>{7dd815ed-b5e5-4762-b3a4-279839bbe571}</Project>
       <Name>2015</Name>
     </ProjectReference>
+    <ProjectReference Include="..\2016\2016.csproj">
+      <Project>{03b63177-b820-4564-924d-6ba4091d6a44}</Project>
+      <Name>2016</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{cfeb57e4-2118-467d-9ea7-0d8e6001febb}</Project>
       <Name>Common</Name>
