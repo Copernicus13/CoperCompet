@@ -36,9 +36,8 @@ namespace AdventOfCode._2016
                     if (p == Part.Part2)
                     {
                         char[] res = line.ToArray();
-                        for (var k = 0; k < res.Length; k++)
-                            for (var tmp = 0; tmp < c % 26; ++tmp)
-                                res[k] = res[k] == 'z' ? 'a' : (char)(res[k] + 1);
+                        for (var i = 0; i < res.Length; ++i)
+                            res[i] = (char)((res[i] - 'a' + c % 26) % 26 + 'a');
                         decyphered.Add(new Tuple<int, string>(c, new string(res)));
                     }
                 }
