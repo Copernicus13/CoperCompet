@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Globalization;
+using System.Security.Cryptography;
+using System.Text;
 using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
@@ -7,7 +10,40 @@ namespace AdventOfCode._2016
     {
         public Day05(Part p)
         {
-            throw new NotImplementedException();
+            string line = Console.ReadLine();
+            long cpt = 1;
+            char[] res = new char[8];
+
+            using (var md5 = MD5.Create())
+            {
+                for (int i = 0; i < 8; ++i)
+                {
+                    while (++cpt < long.MaxValue)
+                    {
+                        string hash = BitConverter.ToString(md5.ComputeHash(
+                            Encoding.ASCII.GetBytes(string.Format("{0}{1}", line, cpt))))
+                            .Replace("-", string.Empty);
+                        if (hash.StartsWith("00000"))
+                        {
+                            if (p == Part.Part1)
+                            {
+                                res[i] = hash[5];
+                                break;
+                            }
+                            else if (p == Part.Part2)
+                            {
+                                int pos = int.Parse(hash.Substring(5, 1), NumberStyles.AllowHexSpecifier);
+                                if (pos < 8 && res[pos] == '\0')
+                                {
+                                    res[pos] = hash[6];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            Console.WriteLine(res);
         }
     }
 }
