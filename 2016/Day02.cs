@@ -29,65 +29,43 @@ namespace AdventOfCode._2016
                 posX = posY = 1;
             else if (p == Part.Part2)
                 posY = 2;
-            string line;
+            string line, res = string.Empty;
             while (!string.IsNullOrEmpty(line = Console.ReadLine()))
             {
                 foreach (char c in line)
                 {
                     if (p == Part.Part1)
-                        Calc1(ref posX, ref posY, c);
+                        Calc(Board1, ref posX, ref posY, c);
                     else if (p == Part.Part2)
-                        Calc2(ref posX, ref posY, c);
+                        Calc(Board2, ref posX, ref posY, c);
                 }
                 if (p == Part.Part1)
                     actualNb = Board1[posY, posX];
                 else if (p == Part.Part2)
                     actualNb = Board2[posY, posX];
-                Console.WriteLine(actualNb);
+                res += actualNb.ToString("X");
             }
+            Console.WriteLine(res);
         }
 
-        private static void Calc1(ref int posX, ref int posY, char c)
+        private void Calc(int[,] tab, ref int posX, ref int posY, char c)
         {
             switch (c)
             {
                 case 'U':
-                    if (posY > 0)
+                    if (posY > 0 && tab[posY - 1, posX] != -1)
                         --posY;
                     break;
                 case 'D':
-                    if (posY < 2)
+                    if (posY < tab.GetLength(0) - 1 && tab[posY + 1, posX] != -1)
                         ++posY;
                     break;
                 case 'L':
-                    if (posX > 0)
+                    if (posX > 0 && tab[posY, posX - 1] != -1)
                         --posX;
                     break;
                 case 'R':
-                    if (posX < 2)
-                        ++posX;
-                    break;
-            }
-        }
-
-        private void Calc2(ref int posX, ref int posY, char c)
-        {
-            switch (c)
-            {
-                case 'U':
-                    if (posY > 0 && Board2[posX, posY - 1] != -1)
-                        --posY;
-                    break;
-                case 'D':
-                    if (posY < 4 && Board2[posX, posY + 1] != -1)
-                        ++posY;
-                    break;
-                case 'L':
-                    if (posX > 0 && Board2[posX - 1, posY] != -1)
-                        --posX;
-                    break;
-                case 'R':
-                    if (posX < 4 && Board2[posX + 1, posY] != -1)
+                    if (posX < tab.GetLength(1) - 1 && tab[posY, posX + 1] != -1)
                         ++posX;
                     break;
             }
