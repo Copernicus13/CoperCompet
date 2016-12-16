@@ -1,41 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using AdventOfCode.Common;
+using AdventOfCode.Common.Data;
 
 namespace AdventOfCode._2015
 {
     public class Day03
     {
-        private struct Point
-        {
-            public int x;
-            public int y;
-
-            public Point(int x, int y)
-            {
-                this.x = x;
-                this.y = y;
-            }
-
-            public Point Move(char c)
-            {
-                switch (c)
-                {
-                    case '^': --y; break;
-                    case 'v': ++y; break;
-                    case '<': --x; break;
-                    case '>': ++x; break;
-                }
-                return this;
-            }
-        }
-
         private readonly IDictionary<Point, int> _map;
 
         public Day03(Part p)
         {
-            Point current = new Point(0, 0);
-            Point current2 = new Point(0, 0);
+            var current = new Point(0, 0);
+            var current2 = new Point(0, 0);
             if (p == Part.Part1)
                 _map = new Dictionary<Point, int> { { current, 1 } };
             else if (p == Part.Part2)
@@ -45,15 +22,27 @@ namespace AdventOfCode._2015
             {
                 Point actual;
                 if (i % 2 == 0 || p == Part.Part1)
-                    actual = current.Move(line[i]);
+                    actual = Move(ref current, line[i]);
                 else
-                    actual = current2.Move(line[i]);
+                    actual = Move(ref current2, line[i]);
                 if (_map.ContainsKey(actual))
                     ++_map[actual];
                 else
                     _map.Add(actual, 1);
             }
             Console.WriteLine(_map.Count);
+        }
+
+        private static Point Move(ref Point p, char c)
+        {
+            switch (c)
+            {
+                case '^': --p.y; break;
+                case 'v': ++p.y; break;
+                case '<': --p.x; break;
+                case '>': ++p.x; break;
+            }
+            return p;
         }
     }
 }
