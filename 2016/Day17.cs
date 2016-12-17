@@ -22,27 +22,19 @@ namespace AdventOfCode._2016
 
             using (var md5 = MD5.Create())
             {
-                if (p == Part.Part1)
-                    Console.WriteLine(SearchPath(input, md5, true));
-                else if (p == Part.Part2)
-                    Console.WriteLine(SearchPath(input, md5, false));
+                Console.WriteLine(SearchPath(input, md5, p == Part.Part1));
             }
         }
 
         private string SearchPath(string input, MD5 md5, bool shortest)
         {
-            IList<int> allPaths = new List<int>();
-            var queue = new Queue<string>();
-            queue.Enqueue(input);
-            var currentString = string.Empty;
+            var longestPath = -1;
+            var queue = new Queue<string>(new[] { string.Empty });
             while (queue.Any())
             {
-                currentString = queue.Dequeue();
-                if (currentString.Length > 5000)
-                    continue;
-                var currentLoc = GetLoc(input, currentString);
-
-                var allowedDir = CalcMd5(md5, currentString);
+                var currentString = queue.Dequeue();
+                var currentLoc = GetLoc(currentString);
+                var allowedDir = CalcMd5(md5, string.Format("{0}{1}", input, currentString));
                 for (int i = 0; i < _Dir.Length; ++i)
                 {
                     var x = currentLoc.x + _Dir[i].x;
@@ -50,23 +42,23 @@ namespace AdventOfCode._2016
                     if (x >= 0 && x < 4 && y >= 0 && y < 4 && allowedDir[i])
                     {
                         if (shortest && x == 3 && y == 3)
-                            return currentString.Substring(input.Length) + _LitteralDir[i];
+                            return currentString + _LitteralDir[i];
                         if (!shortest && x == 3 && y == 3)
-                            allPaths.Add(currentString.Length - input.Length + 1);
+                            longestPath = currentString.Length + 1;
                         if (shortest || x != 3 || y != 3)
                             queue.Enqueue(currentString + _LitteralDir[i]);
                     }
                 }
             }
-            if (!shortest && allPaths.Any())
-                return allPaths.Max().ToString();
+            if (!shortest && longestPath != -1)
+                return longestPath.ToString();
             return "IMPOSSIBLE";
         }
 
-        private Point GetLoc(string input, string currentString)
+        private Point GetLoc(string currentString)
         {
             var p = new Point(0, 0);
-            foreach (char c in currentString.Substring(input.Length))
+            foreach (char c in currentString)
             {
                 var idx = _LitteralDir.IndexOf(c);
                 p.x += _Dir[idx].x;
