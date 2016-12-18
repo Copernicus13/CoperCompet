@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
@@ -7,7 +9,36 @@ namespace AdventOfCode._2016
     {
         public Day18(Part p)
         {
-            throw new NotImplementedException();
+            string line = Console.ReadLine();
+
+            IList<string> tiles = new List<string> { line };
+
+            var nbLoop = p == Part.Part1 ? 39 : 399999;
+
+            for (int i = 0; i < nbLoop; ++i)
+                tiles.Add(GetNextTiles(tiles[i]));
+
+            Console.WriteLine(tiles.Aggregate(0, (a, b) => a + b.Count(c => c == '.')));
+        }
+
+        private string GetNextTiles(string previousTiles)
+        {
+            char[] res = new string('.', previousTiles.Length).ToCharArray();
+            for (int i = 0; i < previousTiles.Length; ++i)
+            {
+                char left = i - 1 < 0 ? '.' : previousTiles[i - 1];
+                char center = previousTiles[i];
+                char right = i + 1 >= previousTiles.Length ? '.' : previousTiles[i + 1];
+
+                if (left == '^' && center == '^' && right == '.' ||
+                    left == '.' && center == '^' && right == '^' ||
+                    left == '^' && center == '.' && right == '.' ||
+                    left == '.' && center == '.' && right == '^')
+                {
+                    res[i] = '^';
+                }
+            }
+            return new string(res);
         }
     }
 }
