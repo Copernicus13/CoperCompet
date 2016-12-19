@@ -40,6 +40,7 @@
     <Compile Include="Combinatorics\SmallPrimeUtility.cs" />
     <Compile Include="Combinatorics\Variations.cs" />
     <Compile Include="Data\ArrayHelpers.cs" />
+    <Compile Include="Data\CircularLinkedList.cs" />
     <Compile Include="Data\Point.cs" />
     <Compile Include="EnumPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
