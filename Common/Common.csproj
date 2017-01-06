@@ -42,10 +42,22 @@
     <Compile Include="Data\ArrayHelpers.cs" />
     <Compile Include="Data\CircularLinkedList.cs" />
     <Compile Include="Data\Point.cs" />
+    <Compile Include="Data\RangeInt.cs">
+      <DependentUpon>Range.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RangeUInt.cs">
+      <DependentUpon>Range.tt</DependentUpon>
+    </Compile>
     <Compile Include="EnumPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Maths.cs" />
     <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Range.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <CustomToolNamespace>Data</CustomToolNamespace>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
