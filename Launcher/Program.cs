@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using HackerCup._2017.Qualification;
 
 namespace HackerCup.Launcher
 {
@@ -6,6 +7,8 @@ namespace HackerCup.Launcher
     {
         public static void Main(string[] args)
         {
+            // ReSharper disable once ObjectCreationAsStatement
+            new ProgressPie();
             Console.Write("Appuyez sur une touche pour continuer…");
             Console.Read();
         }
