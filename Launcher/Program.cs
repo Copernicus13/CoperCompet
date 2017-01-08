@@ -9,8 +9,11 @@ namespace HackerCup.Launcher
         {
             // ReSharper disable once ObjectCreationAsStatement
             new ProgressPie();
-            Console.Write("Appuyez sur une touche pour continuer…");
-            Console.Read();
+            if (!Console.IsInputRedirected)
+            {
+                Console.WriteLine("Appuyez sur une touche pour continuer…");
+                Console.Read();
+            }
         }
     }
 }
