@@ -16,7 +16,7 @@
 public class Manager
 {
     private class Block
-	{
+    {
         public string Name;
         public int Start, Length;
         public bool IncludeInDefault;
@@ -31,32 +31,32 @@ public class Manager
     protected readonly List<string> GeneratedFileNames = new List<string>();
 
     public static Manager Create(ITextTemplatingEngineHost host, StringBuilder template)
-	{
+    {
         return (host is IServiceProvider) ?
-			new VSManager(host, template) : new Manager(host, template);
+            new VSManager(host, template) : new Manager(host, template);
     }
 
     public void StartNewFile(string name)
-	{
+    {
         if (name == null)
             throw new ArgumentNullException("name");
         CurrentBlock = new Block { Name = name };
     }
 
     public void StartFooter(bool includeInDefault = true)
-	{
+    {
         CurrentBlock = _footer;
         _footer.IncludeInDefault = includeInDefault;
     }
 
     public void StartHeader(bool includeInDefault = true)
-	{
+    {
         CurrentBlock = _header;
         _header.IncludeInDefault = includeInDefault;
     }
 
     public void EndBlock()
-	{
+    {
         if (CurrentBlock == null)
             return;
         CurrentBlock.Length = _template.Length - CurrentBlock.Start;
@@ -66,9 +66,9 @@ public class Manager
     }
 
     public virtual void Process(bool split, bool sync = true)
-	{
+    {
         if (split)
-		{
+        {
             EndBlock();
             string headerText = _template.ToString(_header.Start, _header.Length);
             string footerText = _template.ToString(_footer.Start, _footer.Length);
@@ -77,7 +77,7 @@ public class Manager
             if (!_footer.IncludeInDefault)
                 _template.Remove(_footer.Start, _footer.Length);
             foreach(Block block in _files)
-			{
+            {
                 string fileName = Path.Combine(outputPath, block.Name);
                 string content = headerText + _template.ToString(block.Start, block.Length) + footerText;
                 GeneratedFileNames.Add(fileName);
@@ -90,37 +90,37 @@ public class Manager
     }
 
     protected virtual void CreateFile(string fileName, string content)
-	{
+    {
         if (IsFileContentDifferent(fileName, content))
             File.WriteAllText(fileName, content);
     }
 
     public virtual string GetCustomToolNamespace(string fileName)
-	{
+    {
         return null;
     }
 
     public virtual string DefaultProjectNamespace
-	{
+    {
         get { return null; }
     }
 
     protected bool IsFileContentDifferent(string fileName, string newContent)
-	{
+    {
         return !(File.Exists(fileName) && File.ReadAllText(fileName) == newContent);
     }
 
     private Manager(ITextTemplatingEngineHost host, StringBuilder template)
-	{
+    {
         this._host = host;
         this._template = template;
     }
 
     private Block CurrentBlock
-	{
+    {
         get { return _currentBlock; }
         set
-		{
+        {
             if (CurrentBlock != null)
                 EndBlock();
             if (value != null)
@@ -130,41 +130,41 @@ public class Manager
     }
 
     private class VSManager: Manager
-	{
+    {
         private readonly EnvDTE.ProjectItem _templateProjectItem;
         private readonly EnvDTE.DTE _dte;
         private readonly Action<string> _checkOutAction;
         private readonly Action<List<string>> _projectSyncAction;
 
         public override string DefaultProjectNamespace
-		{
+        {
             get
-			{
+            {
                 return _templateProjectItem.ContainingProject
-					.Properties.Item("DefaultNamespace").Value.ToString();
+                    .Properties.Item("DefaultNamespace").Value.ToString();
             }
         }
 
         public override string GetCustomToolNamespace(string fileName)
-		{
+        {
             return _dte.Solution.FindProjectItem(fileName)
-				.Properties.Item("CustomToolNamespace").Value.ToString();
+                .Properties.Item("CustomToolNamespace").Value.ToString();
         }
 
         public override void Process(bool split, bool sync)
-		{
+        {
             if (_templateProjectItem.ProjectItems == null)
                 return;
             base.Process(split, sync);
             if (sync)
                 _projectSyncAction.EndInvoke(
-					_projectSyncAction.BeginInvoke(GeneratedFileNames, null, null));
+                    _projectSyncAction.BeginInvoke(GeneratedFileNames, null, null));
         }
 
         protected override void CreateFile(string fileName, string content)
-		{
+        {
             if (IsFileContentDifferent(fileName, content))
-			{
+            {
                 CheckoutFileIfRequired(fileName);
                 File.WriteAllText(fileName, content);
             }
@@ -172,7 +172,7 @@ public class Manager
 
         internal VSManager(ITextTemplatingEngineHost host, StringBuilder template)
             : base(host, template)
-		{
+        {
             var hostServiceProvider = (IServiceProvider)host;
             if (hostServiceProvider == null)
                 throw new ArgumentNullException("Could not obtain IServiceProvider");
@@ -185,12 +185,12 @@ public class Manager
         }
 
         private void ProjectSync(EnvDTE.ProjectItem templateProjectItem,
-			List<string> keepFileNames)
-		{
+            List<string> keepFileNames)
+        {
             var keepFileNameSet = new HashSet<string>(keepFileNames);
             var projectFiles = new Dictionary<string, EnvDTE.ProjectItem>();
             var originalFilePrefix =
-				Path.GetFileNameWithoutExtension(templateProjectItem.FileNames[0]) + ".";
+                Path.GetFileNameWithoutExtension(templateProjectItem.FileNames[0]) + ".";
             foreach (EnvDTE.ProjectItem projectItem in templateProjectItem.ProjectItems)
                 projectFiles.Add(projectItem.FileNames[0], projectItem);
 
@@ -198,7 +198,7 @@ public class Manager
             foreach (var pair in projectFiles)
                 if (!keepFileNames.Contains(pair.Key) && !(Path.GetFileNameWithoutExtension(pair.Key) + ".").StartsWith(originalFilePrefix))
                     pair.Value.Delete();
-			
+
             // Add missing files to the project
             foreach(string fileName in keepFileNameSet)
                 if (!projectFiles.ContainsKey(fileName))
@@ -206,7 +206,7 @@ public class Manager
         }
 
         private void CheckoutFileIfRequired(string fileName)
-		{
+        {
             var sc = _dte.SourceControl;
             if (sc != null && sc.IsItemUnderSCC(fileName) && !sc.IsItemCheckedOut(fileName))
                 _checkOutAction.EndInvoke(_checkOutAction.BeginInvoke(fileName, null, null));
