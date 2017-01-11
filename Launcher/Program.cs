@@ -8,7 +8,7 @@ namespace AdventOfCode.Launcher
         public static void Main(string[] args)
         {
             // ReSharper disable once ObjectCreationAsStatement
-            new _2016.Day22(Part.Part2);
+            new _2016.Day23(Part.Part2);
             Console.Write("Appuyez sur une touche pour continuer…");
             Console.Read();
         }
