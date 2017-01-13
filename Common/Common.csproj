@@ -41,6 +41,7 @@
     <Compile Include="Combinatorics\Variations.cs" />
     <Compile Include="Data\ArrayHelpers.cs" />
     <Compile Include="Data\CircularLinkedList.cs" />
+    <Compile Include="Data\Deque.cs" />
     <Compile Include="Data\Point.cs">
       <DependentUpon>Point.tt</DependentUpon>
     </Compile>
