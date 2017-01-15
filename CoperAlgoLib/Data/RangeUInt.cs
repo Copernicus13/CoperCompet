@@ -14,7 +14,7 @@ namespace CoperAlgoLib.Data
     {
         private Tuple<uint, uint> _Range;
 
-        public static RangeUInt Void = new RangeUInt(default(uint), default(uint));
+        public static readonly RangeUInt Void = new RangeUInt(default(uint), default(uint));
 
         public uint Minimum { get { return _Range.Item1; } }
 

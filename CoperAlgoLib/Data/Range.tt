@@ -35,7 +35,7 @@ namespace <#=string.Format("{0}{1}{2}", manager.DefaultProjectNamespace,
     {
         private Tuple<<#=typeName#>, <#=typeName#>> _Range;
 
-        public static <#=className#> Void = new <#=className#>(default(<#=typeName#>), default(<#=typeName#>));
+        public static readonly <#=className#> Void = new <#=className#>(default(<#=typeName#>), default(<#=typeName#>));
 
         public <#=typeName#> Minimum { get { return _Range.Item1; } }
 

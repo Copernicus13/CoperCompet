@@ -10,13 +10,13 @@ namespace CoperAlgoLib.Geometry
 {
     public struct PointUInt
     {
-        public uint x;
-        public uint y;
+        public uint X;
+        public uint Y;
 
         public PointUInt(uint x, uint y)
         {
-            this.x = x;
-            this.y = y;
+            X = x;
+            Y = y;
         }
     }
 }

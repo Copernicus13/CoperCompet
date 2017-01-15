@@ -31,13 +31,13 @@ namespace <#=string.Format("{0}{1}{2}", manager.DefaultProjectNamespace,
 {
     public struct <#=className#>
     {
-        public <#=typeName#> x;
-        public <#=typeName#> y;
+        public <#=typeName#> X;
+        public <#=typeName#> Y;
 
         public <#=className#>(<#=typeName#> x, <#=typeName#> y)
         {
-            this.x = x;
-            this.y = y;
+            X = x;
+            Y = y;
         }
     }
 }

@@ -19,21 +19,21 @@ namespace HackerCup._2017.Qualification
                 var point = new PointD(
                     double.Parse(s.Split(' ')[1]), double.Parse(s.Split(' ')[2]));
                 double distFromCenter = Math.Sqrt(
-                    Math.Pow(point.x - center.x, 2) + Math.Pow(point.y - center.y, 2));
+                    Math.Pow(point.X - center.X, 2) + Math.Pow(point.Y - center.Y, 2));
 
                 if (distFromCenter - radius > 0.0000001d)
                     Console.WriteLine(string.Format("Case #{0}: white", nbCase));
-                else if (point.x == center.x && point.y == center.y && P > 0)
+                else if (point.X == center.X && point.Y == center.Y && P > 0)
                     Console.WriteLine(string.Format("Case #{0}: black", nbCase));
                 else
                 {
                     double angle = (double)P / 100 * 360;
                     double distFromStart = Math.Sqrt(
-                        Math.Pow(point.x - start.x, 2) +
-                        Math.Pow(point.y - center.y - distFromCenter, 2));
+                        Math.Pow(point.X - start.X, 2) +
+                        Math.Pow(point.Y - center.Y - distFromCenter, 2));
                     double anglePoint = 180 - 2 *
                         (Math.Acos(distFromStart / (2 * distFromCenter)) * 180 / Math.PI);
-                    if (point.x < center.x)
+                    if (point.X < center.X)
                         anglePoint = 360 - anglePoint;
                     if (anglePoint - angle < 0.0000001d)
                         Console.WriteLine(string.Format("Case #{0}: black", nbCase));
