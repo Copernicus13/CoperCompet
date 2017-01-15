@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
-using AdventOfCode.Common;
-using AdventOfCode.Common.Combinatorics;
+using CoperAlgoLib.Combinatorics;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/13
+    /// </summary>
     public class Day13
     {
         private enum Guest
@@ -42,7 +44,7 @@ namespace AdventOfCode._2015
             do
             {
                 best = Math.Max(Calc(perm), best);
-            } while (Permutations<int>.GetNext(perm));
+            } while (Permutations<object>.GetNext(perm));
 
             Console.WriteLine(best);
         }

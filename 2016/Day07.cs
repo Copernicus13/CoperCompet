@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/7
+    /// </summary>
     public class Day07
     {
         public Day07(Part p)

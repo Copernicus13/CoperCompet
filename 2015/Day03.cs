@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using AdventOfCode.Common;
-using AdventOfCode.Common.Data;
+using CoperAlgoLib.Geometry;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/3
+    /// </summary>
     public class Day03
     {
         private readonly IDictionary<Point, int> _map;
@@ -37,10 +39,10 @@ namespace AdventOfCode._2015
         {
             switch (c)
             {
-                case '^': --p.y; break;
-                case 'v': ++p.y; break;
-                case '<': --p.x; break;
-                case '>': ++p.x; break;
+                case '^': --p.Y; break;
+                case 'v': ++p.Y; break;
+                case '<': --p.X; break;
+                case '>': ++p.X; break;
             }
             return p;
         }

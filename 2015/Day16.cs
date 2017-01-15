@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/16
+    /// </summary>
     public class Day16
     {
-
 #pragma warning disable 0660, 0661
         [SuppressMessage("ReSharper", "NotAccessedField.Local")]
         private class AuntProperties

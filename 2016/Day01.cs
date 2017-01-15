@@ -1,8 +1,10 @@
 ﻿using System;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/1
+    /// </summary>
     public class Day01
     {
         private const int MAX_TAB_SIZE = 1000;

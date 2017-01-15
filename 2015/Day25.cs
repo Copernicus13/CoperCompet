@@ -1,8 +1,10 @@
 ﻿using System;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/25
+    /// </summary>
     public class Day25
     {
         public Day25(Part p)
@@ -19,7 +21,9 @@ namespace AdventOfCode._2015
                 int row = i;
                 for (int column = 0; column <= i; ++column, --row)
                 {
+#pragma warning disable CS0078 // Le suffixe 'l' risque d’être facilement confondu avec le chiffre '1'
                     previous = (int)(previous * 252533l % 33554393);
+#pragma warning restore CS0078
                     if (row == param1 && column == param2)
                         Console.WriteLine(previous);
                 }

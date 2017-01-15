@@ -1,19 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/25
+    /// </summary>
     public class Day25
     {
-        private readonly IDictionary<string, int> _Dict;
+        private IDictionary<string, int> _Dict;
 
-        public Day25(Part p)
+        public Day25()
         {
             IList<string> instr = new List<string>();
             for (string line; !string.IsNullOrEmpty(line = Console.ReadLine()); instr.Add(line))
                 ;
 
+            Part1(instr);
+            Part2();
+        }
+
+        private void Part1(IList<string> instr)
+        {
             for (int a = 0; a <= int.MaxValue; ++a)
             {
                 _Dict = new Dictionary<string, int>();
@@ -59,10 +67,15 @@ namespace AdventOfCode._2016
                 }
                 if (isOK)
                 {
-                    Console.WriteLine(a);
+                    Console.WriteLine("Part1: " + a);
                     break;
                 }
             }
+        }
+
+        private void Part2()
+        {
+            Console.WriteLine("Part2: nothing");
         }
 
         private int getOperand(string v)

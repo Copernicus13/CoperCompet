@@ -2,10 +2,12 @@
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/5
+    /// </summary>
     public class Day05
     {
         public Day05(Part p)

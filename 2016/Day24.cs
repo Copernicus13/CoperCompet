@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Common;
-using AdventOfCode.Common.Combinatorics;
-using AdventOfCode.Common.Data;
+using CoperAlgoLib.Combinatorics;
+using CoperAlgoLib.Geometry;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/24
+    /// </summary>
     public class Day24
     {
         private const int MapWidth = 185;
@@ -65,24 +67,24 @@ namespace AdventOfCode._2016
         {
             var queue = new Queue<Point>();
             var mapClone = _Map.Clone() as int[,];
-            mapClone[startPoint.y, startPoint.x] = 0;
-            queue.Enqueue(new Point(startPoint.x, startPoint.y));
+            mapClone[startPoint.Y, startPoint.X] = 0;
+            queue.Enqueue(new Point(startPoint.X, startPoint.Y));
             while (queue.Any())
             {
                 var current = queue.Dequeue();
                 foreach (var dir in _Dir)
                 {
-                    var x = current.x + dir.x;
-                    var y = current.y + dir.y;
+                    var x = current.X + dir.X;
+                    var y = current.Y + dir.Y;
                     if (x >= 0 && x < MapWidth && y >= 0 && y < MapHeight &&
                         mapClone[y, x] == int.MaxValue)
                     {
-                        mapClone[y, x] = mapClone[current.y, current.x] + 1;
+                        mapClone[y, x] = mapClone[current.Y, current.X] + 1;
                         queue.Enqueue(new Point(x, y));
                     }
                 }
             }
-            return mapClone[targetPoint.y, targetPoint.x];
+            return mapClone[targetPoint.Y, targetPoint.X];
         }
     }
 }

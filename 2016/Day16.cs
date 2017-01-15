@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/16
+    /// </summary>
     public class Day16
     {
         public Day16(Part p)

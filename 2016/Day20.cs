@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Common;
-using AdventOfCode.Common.Data;
+using CoperAlgoLib.Data;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/20
+    /// </summary>
     public class Day20
     {
         public Day20(Part p)

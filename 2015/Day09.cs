@@ -1,9 +1,11 @@
 ﻿using System;
-using AdventOfCode.Common;
-using AdventOfCode.Common.Combinatorics;
+using CoperAlgoLib.Combinatorics;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/9
+    /// </summary>
     public class Day09
     {
         private enum City
@@ -39,7 +41,7 @@ namespace AdventOfCode._2015
                 do
                 {
                     best = Math.Min(Calc(perm), best);
-                } while (Permutations<int>.GetNext(perm));
+                } while (Permutations<object>.GetNext(perm));
             }
             else if (p == Part.Part2)
             {
@@ -47,7 +49,7 @@ namespace AdventOfCode._2015
                 do
                 {
                     best = Math.Max(Calc(perm), best);
-                } while (Permutations<int>.GetNext(perm));
+                } while (Permutations<object>.GetNext(perm));
             }
             Console.WriteLine(best);
         }

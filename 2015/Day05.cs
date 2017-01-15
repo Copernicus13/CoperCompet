@@ -1,8 +1,10 @@
 ﻿using System;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/5
+    /// </summary>
     public class Day05
     {
         public Day05(Part p)

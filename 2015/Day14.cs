@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/14
+    /// </summary>
     public class Day14
     {
         private enum ReinDeer
@@ -33,7 +35,7 @@ namespace AdventOfCode._2015
                 _dict[ToRD(words[0])] = new Tuple<int, int, int>(
                     int.Parse(words[3]), int.Parse(words[6]), int.Parse(words[13]));
             }
-            
+
             int[] result = new int[nbReinDeers];
 
             if (p == Part.Part1)

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using AdventOfCode.Common;
+using CoperAlgoLib;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/20
+    /// </summary>
     public class Day20
     {
         private const int NB = 1000000;

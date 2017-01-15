@@ -1,8 +1,10 @@
 ﻿using System;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/2
+    /// </summary>
     public class Day02
     {
         private readonly int[,] Board1 =

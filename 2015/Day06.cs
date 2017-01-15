@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2015
 {
+    /// <summary>
+    /// http://adventofcode.com/2015/day/6
+    /// </summary>
     public class Day06
     {
         private readonly bool[,] _grid1;
@@ -58,7 +60,7 @@ namespace AdventOfCode._2015
             for (int i = x1; i <= x2; ++i)
                 for (int j = y1; j <= y2; ++j)
                     _grid2[i, j] += action.HasValue ?
-                        (action.Value ? 1 : (_grid2[i, j] > 0 ? - 1 : 0)) :
+                        (action.Value ? 1 : (_grid2[i, j] > 0 ? -1 : 0)) :
                         2;
         }
     }

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/14
+    /// </summary>
     public class Day14
     {
         private IDictionary<string, string> dictHash = new Dictionary<string, string>();

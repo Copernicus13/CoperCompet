@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using AdventOfCode.Common;
-using AdventOfCode.Common.Data;
+using CoperAlgoLib.Geometry;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/17
+    /// </summary>
     public class Day17
     {
+        private string _LitteralDir = "UDLR";
         private Point[] _Dir =
             {
                 new Point(0, -1), new Point(0, 1), new Point(-1, 0), new Point(1, 0)
             };
-        private string _LitteralDir = "UDLR";
 
         public Day17(Part p)
         {
@@ -37,8 +39,8 @@ namespace AdventOfCode._2016
                 var allowedDir = CalcMd5(md5, string.Format("{0}{1}", input, currentString));
                 for (int i = 0; i < _Dir.Length; ++i)
                 {
-                    var x = currentLoc.x + _Dir[i].x;
-                    var y = currentLoc.y + _Dir[i].y;
+                    var x = currentLoc.X + _Dir[i].X;
+                    var y = currentLoc.Y + _Dir[i].Y;
                     if (x >= 0 && x < 4 && y >= 0 && y < 4 && allowedDir[i])
                     {
                         if (shortest && x == 3 && y == 3)
@@ -61,8 +63,8 @@ namespace AdventOfCode._2016
             foreach (char c in currentString)
             {
                 var idx = _LitteralDir.IndexOf(c);
-                p.x += _Dir[idx].x;
-                p.y += _Dir[idx].y;
+                p.X += _Dir[idx].X;
+                p.Y += _Dir[idx].Y;
             }
             return p;
         }

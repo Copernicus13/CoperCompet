@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using AdventOfCode.Common;
+using CoperAlgoLib.Data;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/19
+    /// </summary>
     public class Day19
     {
         public Day19(Part p)
@@ -18,26 +21,21 @@ namespace AdventOfCode._2016
             LinkedListNode<int> stolen = null;
 
             if (p == Part.Part1)
-                stolen = GetNext(thief);
+                stolen = thief.CircularNext();
             else if (p == Part.Part2)
                 stolen = list.Find(list.Count / 2);
 
             while (list.Count > 1)
             {
-                var nextToDead = GetNext(stolen);
+                var nextToStolen = stolen.CircularNext();
                 list.Remove(stolen);
-                thief = GetNext(thief);
+                thief = thief.CircularNext();
                 if (p == Part.Part1)
-                    stolen = GetNext(thief);
+                    stolen = thief.CircularNext();
                 else if (p == Part.Part2)
-                    stolen = list.Count % 2 == 0 ? GetNext(nextToDead) : nextToDead;
+                    stolen = list.Count % 2 == 0 ? nextToStolen.CircularNext() : nextToStolen;
             }
             Console.WriteLine(list.First.Value + 1);
-        }
-
-        private LinkedListNode<int> GetNext(LinkedListNode<int> next)
-        {
-            return next != next.List.Last ? next.Next : next.List.First;
         }
     }
 }

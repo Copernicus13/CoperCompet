@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Common;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/12
+    /// </summary>
     public class Day12
     {
         private readonly IDictionary<string, int> dict = new Dictionary<string, int>();

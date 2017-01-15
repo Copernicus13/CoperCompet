@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Common;
-using AdventOfCode.Common.Data;
+using CoperAlgoLib.Data;
+using CoperAlgoLib.Geometry;
 
 namespace AdventOfCode._2016
 {
+    /// <summary>
+    /// http://adventofcode.com/2016/day/22
+    /// </summary>
     public class Day22
     {
         private const int MapWidth = 39;
@@ -75,24 +78,24 @@ namespace AdventOfCode._2016
         private int ShortestPath(int[,] map, Point startPoint, Point targetPoint)
         {
             var queue = new Queue<Point>();
-            map[startPoint.y, startPoint.x] = 0;
-            queue.Enqueue(new Point(startPoint.x, startPoint.y));
+            map[startPoint.Y, startPoint.X] = 0;
+            queue.Enqueue(new Point(startPoint.X, startPoint.Y));
             while (queue.Any())
             {
                 var current = queue.Dequeue();
                 foreach (var dir in _Dir)
                 {
-                    var x = current.x + dir.x;
-                    var y = current.y + dir.y;
+                    var x = current.X + dir.X;
+                    var y = current.Y + dir.Y;
                     if (x >= 0 && x < MapWidth && y >= 0 && y < MapHeight &&
                         map[y, x] == int.MaxValue)
                     {
-                        map[y, x] = map[current.y, current.x] + 1;
+                        map[y, x] = map[current.Y, current.X] + 1;
                         queue.Enqueue(new Point(x, y));
                     }
                 }
             }
-            return map[targetPoint.y, targetPoint.x];
+            return map[targetPoint.Y, targetPoint.X];
         }
     }
 }

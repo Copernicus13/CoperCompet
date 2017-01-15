@@ -1,0 +1,3 @@
+[submodule "CoperAlgoLib"]
+	path = CoperAlgoLib
+	url = https://github.com/Copernicus13/Coper-Algo-Lib.git
