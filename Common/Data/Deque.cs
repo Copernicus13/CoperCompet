@@ -1,28 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace HackerCup.Common.Data
 {
+    /// <remarks>
+    /// For large dataset, you should consider using a LinkedList
+    /// for better performance on Push and Pop operations.
+    /// </remarks>
     public sealed class Deque<T> : List<T>
     {
-        #region Properties
-
-        public bool IsFixedSize => (this as IList).IsFixedSize;
-
-        public bool IsReadOnly => (this as IList).IsReadOnly;
-
-        public bool IsSynchronized => (this as ICollection).IsSynchronized;
-
-        public object SyncRoot => (this as ICollection).SyncRoot;
-
-        object IList.this[int index]
-        {
-            get { return this[index]; }
-            set { this[index] = (T)value; }
-        }
-
-        #endregion
-
         #region Constructors
 
         // Initializes a new instance of the Deque<T> class with the specified capacity.
