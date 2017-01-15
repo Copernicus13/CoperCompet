@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HackerCup.Common.Data
+namespace CoperAlgoLib.Data
 {
     /// <remarks>
     /// For large dataset, you should consider using a LinkedList

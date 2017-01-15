@@ -3,7 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace AdventOfCode.Common.Combinatorics
+namespace CoperAlgoLib.Combinatorics
 {
     /// <summary>
     /// Utility class that maintains a small table of prime numbers and provides

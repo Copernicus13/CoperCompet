@@ -8,42 +8,42 @@
 using System;
 using System.Collections.Generic;
 
-namespace HackerCup.Common.Data
+namespace CoperAlgoLib.Data
 {
-    public class RangeInt
+    public class RangeUInt
     {
-        private Tuple<int, int> _Range;
+        private Tuple<uint, uint> _Range;
 
-        public static RangeInt Void = new RangeInt(default(int), default(int));
+        public static RangeUInt Void = new RangeUInt(default(uint), default(uint));
 
-        public int Minimum { get { return _Range.Item1; } }
+        public uint Minimum { get { return _Range.Item1; } }
 
-        public int Maximum { get { return _Range.Item2; } }
+        public uint Maximum { get { return _Range.Item2; } }
 
-        public int Count { get { return Maximum - Minimum + 1; } }
+        public uint Count { get { return Maximum - Minimum + 1; } }
 
-        public RangeInt(int min, int max)
+        public RangeUInt(uint min, uint max)
         {
-            _Range = new Tuple<int, int>(min, max);
+            _Range = new Tuple<uint, uint>(min, max);
         }
 
-        public bool ContainsValue(int value)
+        public bool ContainsValue(uint value)
         {
-			return Comparer<int>.Default.Compare(Minimum, value) <= 0 &&
-                Comparer<int>.Default.Compare(value, Maximum) <= 0;
+			return Comparer<uint>.Default.Compare(Minimum, value) <= 0 &&
+                Comparer<uint>.Default.Compare(value, Maximum) <= 0;
         }
 
-        public bool IsInsideRange(RangeInt range) =>
+        public bool IsInsideRange(RangeUInt range) =>
             range.ContainsValue(Minimum) && range.ContainsValue(Maximum);
 
-        public bool ContainsRange(RangeInt range) =>
+        public bool ContainsRange(RangeUInt range) =>
             ContainsValue(range.Minimum) && ContainsValue(range.Maximum);
 
-        public bool IsOverlapping(RangeInt range) =>
+        public bool IsOverlapping(RangeUInt range) =>
             ContainsValue(range.Minimum) || ContainsValue(range.Maximum) ||
             range.ContainsValue(Minimum) || range.ContainsValue(Maximum);
 
-		public RangeInt Union(RangeInt range)
+		public RangeUInt Union(RangeUInt range)
         {
             if (!IsOverlapping(range))
                 return Void;
@@ -51,14 +51,14 @@ namespace HackerCup.Common.Data
                 return range;
             if (ContainsRange(range))
                 return this;
-            return new RangeInt(
-                Comparer<int>.Default.Compare(Minimum, range.Minimum) < 0 ?
+            return new RangeUInt(
+                Comparer<uint>.Default.Compare(Minimum, range.Minimum) < 0 ?
                     Minimum : range.Minimum,
-                Comparer<int>.Default.Compare(Maximum, range.Maximum) > 0 ?
+                Comparer<uint>.Default.Compare(Maximum, range.Maximum) > 0 ?
                     Maximum : range.Maximum);
         }
 
-        public RangeInt Intersect(RangeInt range)
+        public RangeUInt Intersect(RangeUInt range)
         {
             if (!IsOverlapping(range))
                 return Void;
@@ -66,10 +66,10 @@ namespace HackerCup.Common.Data
                 return this;
             if (ContainsRange(range))
                 return range;
-            return new RangeInt(
-                Comparer<int>.Default.Compare(Minimum, range.Minimum) < 0 ?
+            return new RangeUInt(
+                Comparer<uint>.Default.Compare(Minimum, range.Minimum) < 0 ?
                     range.Minimum : Minimum,
-                Comparer<int>.Default.Compare(Maximum, range.Maximum) > 0 ?
+                Comparer<uint>.Default.Compare(Maximum, range.Maximum) > 0 ?
                     range.Maximum : Maximum);
         }
     }

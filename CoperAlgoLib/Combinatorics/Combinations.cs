@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventOfCode.Common.Combinatorics
+namespace CoperAlgoLib.Combinatorics
 {
     /// <summary>
     /// Combinations defines a meta-collection, typically a list of lists, of all possible 

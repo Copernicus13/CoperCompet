@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Common
+﻿namespace CoperAlgoLib
 {
     public static class Utils
     {

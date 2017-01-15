@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using HackerCup.Common.Data;
+using CoperAlgoLib.Data;
 
 namespace HackerCup._2017.Qualification
 {

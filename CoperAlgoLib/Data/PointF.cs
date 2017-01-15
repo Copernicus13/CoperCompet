@@ -6,7 +6,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HackerCup.Common.Data
+namespace CoperAlgoLib.Geometry
 {
     public struct PointF
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-using HackerCup.Common.Data;
+using CoperAlgoLib.Geometry;
 
 namespace HackerCup._2017.Qualification
 {

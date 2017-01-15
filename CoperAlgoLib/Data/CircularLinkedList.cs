@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AdventOfCode.Common.Data
+namespace CoperAlgoLib.Data
 {
     public static class LinkedListExtensions
     {

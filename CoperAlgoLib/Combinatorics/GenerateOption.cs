@@ -1,7 +1,7 @@
 // Copyright 2008 Adrian Akison
 // Distributed under license terms of CPOL http://www.codeproject.com/info/cpol10.aspx
 
-namespace AdventOfCode.Common.Combinatorics
+namespace CoperAlgoLib.Combinatorics
 {
     /// <summary>
     /// Indicates whether a Permutation, Combination or Variation meta-collections

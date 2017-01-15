@@ -2,7 +2,7 @@
 // Distributed under license terms of CPOL http://www.codeproject.com/info/cpol10.aspx
 using System.Collections.Generic;
 
-namespace AdventOfCode.Common.Combinatorics
+namespace CoperAlgoLib.Combinatorics
 {
     /// <summary>
     /// Interface for Permutations, Combinations and any other classes that present

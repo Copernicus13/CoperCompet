@@ -6,14 +6,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HackerCup.Common.Data
+namespace CoperAlgoLib.Geometry
 {
-    public struct PointD
+    public struct Point
     {
-        public double x;
-        public double y;
+        public int x;
+        public int y;
 
-        public PointD(double x, double y)
+        public Point(int x, int y)
         {
             this.x = x;
             this.y = y;

@@ -7,8 +7,8 @@
     <ProjectGuid>{CFEB57E4-2118-467D-9EA7-0D8E6001FEBB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HackerCup.Common</RootNamespace>
-    <AssemblyName>Common</AssemblyName>
+    <RootNamespace>CoperAlgoLib</RootNamespace>
+    <AssemblyName>CoperAlgoLib</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <DefineConstants>TRACE</DefineConstants>

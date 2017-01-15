@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "Launcher\Launcher.csproj", "{B8232C35-DA30-491D-B4A1-C547D18136A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{CFEB57E4-2118-467D-9EA7-0D8E6001FEBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoperAlgoLib", "CoperAlgoLib\CoperAlgoLib.csproj", "{CFEB57E4-2118-467D-9EA7-0D8E6001FEBB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017", "2017\2017.csproj", "{0D93A148-DA1C-4331-8EFC-E7C91877E40F}"
 EndProject

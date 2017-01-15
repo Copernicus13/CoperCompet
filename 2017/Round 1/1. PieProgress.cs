@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Common.Data;
+using CoperAlgoLib.Data;
 
 namespace HackerCup._2017.Round1
 {

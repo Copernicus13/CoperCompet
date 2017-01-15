@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace AdventOfCode.Common.Combinatorics
+namespace CoperAlgoLib.Combinatorics
 {
     /// <summary>
     /// Variations defines a meta-collection, typically a list of lists, of all possible 

@@ -33,15 +33,15 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Qualification\1. ProgressPie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qualification\1. ProgressPie.cs" />
     <Compile Include="Qualification\2. LazyLoading.cs" />
     <Compile Include="Round 1\1. PieProgress.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
+    <ProjectReference Include="..\CoperAlgoLib\CoperAlgoLib.csproj">
       <Project>{cfeb57e4-2118-467d-9ea7-0d8e6001febb}</Project>
-      <Name>Common</Name>
+      <Name>CoperAlgoLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

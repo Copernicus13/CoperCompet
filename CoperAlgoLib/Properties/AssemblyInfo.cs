@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de 
 // l’ensemble d’attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("Common")]
-[assembly: AssemblyDescription("HackerCup common library")]
+[assembly: AssemblyTitle("CoperAlgoLib")]
+[assembly: AssemblyDescription("Library for algorithmics contests")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HackerCup")]
-[assembly: AssemblyCopyright("Copyright © Michel Pellegrin 2017")]
+[assembly: AssemblyProduct("CoperAlgoLib")]
+[assembly: AssemblyCopyright("Copyright © Michel Pellegrin 2015-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
