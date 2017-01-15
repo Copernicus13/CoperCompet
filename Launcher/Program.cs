@@ -8,7 +8,7 @@ namespace HackerCup.Launcher
         public static void Main(string[] args)
         {
             // ReSharper disable once ObjectCreationAsStatement
-            new PieProgress();
+            new FightingTheZombies();
             if (!Console.IsInputRedirected)
             {
                 Console.WriteLine("Appuyez sur une touche pour continuer…");

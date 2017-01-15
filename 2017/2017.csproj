@@ -37,6 +37,7 @@
     <Compile Include="Qualification\1. ProgressPie.cs" />
     <Compile Include="Qualification\2. LazyLoading.cs" />
     <Compile Include="Round 1\1. PieProgress.cs" />
+    <Compile Include="Round 1\2. FightingTheZombies.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoperAlgoLib\CoperAlgoLib.csproj">
