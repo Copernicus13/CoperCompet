@@ -1,5 +1,5 @@
 ﻿using System;
-using HackerCup._2017.Qualification;
+using HackerCup._2017.Round1;
 
 namespace HackerCup.Launcher
 {
@@ -8,7 +8,7 @@ namespace HackerCup.Launcher
         public static void Main(string[] args)
         {
             // ReSharper disable once ObjectCreationAsStatement
-            new LazyLoading();
+            new PieProgress();
             if (!Console.IsInputRedirected)
             {
                 Console.WriteLine("Appuyez sur une touche pour continuer…");
