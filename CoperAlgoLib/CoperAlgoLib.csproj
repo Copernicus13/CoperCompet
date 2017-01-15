@@ -42,37 +42,47 @@
     <Compile Include="Data\ArrayHelpers.cs" />
     <Compile Include="Data\CircularLinkedList.cs" />
     <Compile Include="Data\Deque.cs" />
-    <Compile Include="Data\Point.cs">
-      <DependentUpon>Point.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\PointD.cs">
-      <DependentUpon>Point.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\PointF.cs">
-      <DependentUpon>Point.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\PointUInt.cs">
-      <DependentUpon>Point.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\RangeInt.cs">
       <DependentUpon>Range.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\RangeUInt.cs">
       <DependentUpon>Range.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumPart.cs" />
+    <Compile Include="Geometry\Point.cs">
+      <DependentUpon>Point.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Geometry\PointD.cs">
+      <DependentUpon>Point.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Geometry\PointF.cs">
+      <DependentUpon>Point.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Geometry\PointUInt.cs">
+      <DependentUpon>Point.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Geometry\Rectangle.cs" />
+    <Compile Include="Geometry\Size.cs">
+      <DependentUpon>Size.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Geometry\SizeF.cs">
+      <DependentUpon>Size.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Maths.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Point.tt">
+    <Content Include="Geometry\Point.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <CustomToolNamespace>Data</CustomToolNamespace>
+      <CustomToolNamespace>Geometry</CustomToolNamespace>
     </Content>
     <Content Include="Data\Range.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <CustomToolNamespace>Data</CustomToolNamespace>
+    </Content>
+    <Content Include="Geometry\Size.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <CustomToolNamespace>Geometry</CustomToolNamespace>
     </Content>
   </ItemGroup>
   <ItemGroup>
