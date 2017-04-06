@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GoogleCodeJam</RootNamespace>
     <AssemblyName>GCJ#</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,9 +46,8 @@
     <Compile Include="2016\Round 1a\1. TheLastWord.cs" />
     <Compile Include="2016\Round 1a\2. RankAndFile.cs" />
     <Compile Include="2016\Round 1a\3. BFFs.cs" />
-    <Compile Include="2016\Round 1b\1. ExoA.cs" />
-    <Compile Include="2016\Round 1b\2. ExoB.cs" />
-    <Compile Include="2016\Round 1b\3. ExoC.cs" />
+    <Compile Include="2016\Round 1b\1. GettingTheDigits.cs" />
+    <Compile Include="2016\Round 1b\2. CloseMatch.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
