@@ -48,11 +48,18 @@
     <Compile Include="2016\Round 1a\3. BFFs.cs" />
     <Compile Include="2016\Round 1b\1. GettingTheDigits.cs" />
     <Compile Include="2016\Round 1b\2. CloseMatch.cs" />
+    <Compile Include="2017\Qualification\1. OversizedPancakeFlipper.cs" />
+    <Compile Include="2017\Qualification\2. TidyNumbers.cs" />
+    <Compile Include="2017\Qualification\3. BathroomStalls.cs" />
+    <Compile Include="2017\Qualification\4. FashionShow.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="2016\Round 1c\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

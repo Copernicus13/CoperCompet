@@ -19,14 +19,15 @@ REM 2014
 SET map=%map%ha-MagicTrick;hb-CookieClickerAlpha;hc-MinesweeperMaster;hd-DeceitfulWar;he-TheRepeater;hf-NewLotteryGame;
 REM 2015
 SET map=%map%ia-StandingOvation;ib-InfiniteHouseOfPancakes;ic-Dijkstra;id-OminousOmino;ie-MushroomMonster;if-Haircut;
-SET map=%map%ig-Logging;ih-CounterCulture;ii-NoisyNeighbors;ij-HikingDeer;ik-a;il-b;im-c;in-d
+SET map=%map%ig-Logging;ih-CounterCulture;ii-NoisyNeighbors;ij-HikingDeer;ik-a;il-b;im-c;in-d;
+SET map=%map%ja-CountingSheep;jb-RevengeOfThePancakes;jc-CoinJam;jd-Fractiles
 
 ECHO €ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
 ECHO €                            ˛˛˛˛˛ ∏Coper ˛˛˛˛˛                             €
 ECHO €‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
 
 SET Choice=a
-SET Current=ik
+SET Current=jb
 
 SET MsBuildCmd=%WinDir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
 SET MsBuildArgs=/nologo /v:q
