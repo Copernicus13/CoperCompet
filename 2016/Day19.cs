@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AdventOfCode.Common;
 using CoperAlgoLib.Data;
 
 namespace AdventOfCode._2016

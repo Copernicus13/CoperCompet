@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using AdventOfCode.Common;
 using CoperAlgoLib.Geometry;
 
 namespace AdventOfCode._2016

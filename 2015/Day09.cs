@@ -1,4 +1,5 @@
 ﻿using System;
+using AdventOfCode.Common;
 using CoperAlgoLib.Combinatorics;
 
 namespace AdventOfCode._2015

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using AdventOfCode.Common;
 using CoperAlgoLib.Combinatorics;
 
 namespace AdventOfCode._2015

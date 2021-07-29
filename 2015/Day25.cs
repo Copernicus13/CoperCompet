@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdventOfCode.Common;
+using System;
 
 namespace AdventOfCode._2015
 {
@@ -7,7 +8,7 @@ namespace AdventOfCode._2015
     /// </summary>
     public class Day25
     {
-        public Day25(Part p)
+        public Day25(Part _)
         {
             string line = Console.ReadLine();
 

@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode._2015
+﻿namespace AdventOfCode.Common
 {
     public enum Part
     {

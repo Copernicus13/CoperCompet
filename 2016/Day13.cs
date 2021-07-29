@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AdventOfCode.Common;
 using CoperAlgoLib.Geometry;
 
 namespace AdventOfCode._2016
