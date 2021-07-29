@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\2015\2015.csproj" />
     <ProjectReference Include="..\2016\2016.csproj" />
+    <ProjectReference Include="..\2017\2017.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
   <ItemGroup>
