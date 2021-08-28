@@ -5,4 +5,8 @@
     <RootNamespace>HackerCup._2021</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoperAlgoLib\CoperAlgoLib.csproj" />
+  </ItemGroup>
+
 </Project>
