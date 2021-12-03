@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31019.35
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Launcher", "Launcher\Launcher.csproj", "{DF6D5D18-07BC-477A-B1B1-B9C3EC58DBA1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoperAlgoLib", "CoperAlgoLib\CoperAlgoLib.csproj", "{CFEB57E4-2118-467D-9EA7-0D8E6001FEBB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{BC1DBB83-AD42-4A09-A68D-D06210A319CD}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2015", "2015\2015.csproj", "{7DD815ED-B5E5-4762-B3A4-279839BBE571}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2016", "2016\2016.csproj", "{03B63177-B820-4564-924D-6BA4091D6A44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017", "2017\2017.csproj", "{DF697142-9B7E-47AF-91C9-02F4036FE53F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{BC1DBB83-AD42-4A09-A68D-D06210A319CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2017", "2017\2017.csproj", "{DF697142-9B7E-47AF-91C9-02F4036FE53F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
