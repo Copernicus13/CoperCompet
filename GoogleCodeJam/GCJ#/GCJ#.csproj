@@ -52,6 +52,11 @@
     <Compile Include="2017\Qualification\2. TidyNumbers.cs" />
     <Compile Include="2017\Qualification\3. BathroomStalls.cs" />
     <Compile Include="2017\Qualification\4. FashionShow.cs" />
+    <Compile Include="2022\Qualification\1. PunchedCards.cs" />
+    <Compile Include="2022\Qualification\5. TwistyLittlePassages.cs" />
+    <Compile Include="2022\Qualification\2. 3DPrinting.cs" />
+    <Compile Include="2022\Qualification\3. d1000000.cs" />
+    <Compile Include="2022\Qualification\4. ChainReactions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

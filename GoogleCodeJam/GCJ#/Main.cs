@@ -1,5 +1,5 @@
 ﻿using System;
-using GoogleCodeJam._2017.Qualification;
+using GoogleCodeJam._2022.Qualification;
 
 namespace GoogleCodeJam.Launcher
 {
@@ -7,9 +7,12 @@ namespace GoogleCodeJam.Launcher
     {
         public static void Main(string[] args)
         {
-            // ReSharper disable once ObjectCreationAsStatement
-            new ExoA();
-            Console.ReadKey();
+            new ChainReactions();
+            if (!Console.IsInputRedirected)
+            {
+                Console.WriteLine("Appuyez sur une touche pour continuer…");
+                Console.Read();
+            }
         }
     }
 }
