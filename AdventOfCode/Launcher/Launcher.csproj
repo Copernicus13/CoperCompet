@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>AdventOfCode.Launcher</RootNamespace>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup>
+		<StartupObject>AdventOfCode.Launcher.Program</StartupObject>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\2015\2015.csproj" />
+		<ProjectReference Include="..\2016\2016.csproj" />
+		<ProjectReference Include="..\2017\2017.csproj" />
+		<ProjectReference Include="..\2021\2021.csproj" />
+		<ProjectReference Include="..\Common\Common.csproj" />
+	</ItemGroup>
+</Project>

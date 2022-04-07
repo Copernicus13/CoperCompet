@@ -17,7 +17,6 @@ obj/
 [Rr]elease*/
 ipch/
 _ReSharper*/
-GoogleCodeJam.sdf
-GoogleCodeJam.opensdf
 .vs/
 *.sdf
+*.opensdf
