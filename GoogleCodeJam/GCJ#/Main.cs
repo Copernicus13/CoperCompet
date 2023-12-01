@@ -1,7 +1,7 @@
 ﻿using System;
 using GoogleCodeJam._2022.Qualification;
 
-namespace GoogleCodeJam.Launcher
+namespace GoogleCodeJam
 {
     public class Program
     {
