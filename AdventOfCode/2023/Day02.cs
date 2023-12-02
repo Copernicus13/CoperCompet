@@ -30,11 +30,10 @@ namespace AdventOfCode._2023
                 var cube = ParseLine(line);
                 if (p == Part.Part1)
                 {
-                    if (cube.MaxNbRed > RefGame.MaxNbRed ||
-                        cube.MaxNbGreen > RefGame.MaxNbGreen ||
-                        cube.MaxNbBlue > RefGame.MaxNbBlue)
-                        continue;
-                    result += cube.IdGame;
+                    if (cube.MaxNbRed <= RefGame.MaxNbRed ||
+                        cube.MaxNbGreen <= RefGame.MaxNbGreen ||
+                        cube.MaxNbBlue <= RefGame.MaxNbBlue)
+                        result += cube.IdGame;
                 }
                 else
                     result += cube.Power;
@@ -50,13 +49,13 @@ namespace AdventOfCode._2023
             {
                 foreach (var cube in set.Split(',').Select(s => s.Trim()))
                 {
-                    var f = cube.Split(' ');
-                    var value = int.Parse(f[0]);
-                    if (f[1] == "red" && value > result.MaxNbRed)
+                    var infoCube = cube.Split(' ');
+                    var value = int.Parse(infoCube[0]);
+                    if (infoCube[1] == "red" && value > result.MaxNbRed)
                         result.MaxNbRed = value;
-                    else if (f[1] == "green" && value > result.MaxNbGreen)
+                    else if (infoCube[1] == "green" && value > result.MaxNbGreen)
                         result.MaxNbGreen = value;
-                    else if (f[1] == "blue" && value > result.MaxNbBlue)
+                    else if (infoCube[1] == "blue" && value > result.MaxNbBlue)
                         result.MaxNbBlue = value;
                 }
             }
