@@ -16,7 +16,7 @@ namespace AdventOfCode._2023
             public IList<int> MyNumbers { get; } = new List<int>();
 
             public int NbWinner => WinningNumbers.Intersect(MyNumbers).Count();
-            public int Score => NbWinner != 0 ? (int)Math.Pow(2, NbWinner - 1) : 0;
+            public int Score => NbWinner != 0 ? 1 << NbWinner - 1 : 0;
         }
 
         public Day04(Part p)
