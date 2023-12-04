@@ -15,10 +15,10 @@ namespace AdventOfCode._2023
             public int MaxNbRed { get; set; }
             public int MaxNbGreen { get; set; }
             public int MaxNbBlue { get; set; }
-            public int Power => MaxNbRed * MaxNbGreen * MaxNbBlue;
+            public readonly int Power => MaxNbRed * MaxNbGreen * MaxNbBlue;
         }
 
-        private Game RefGame = new Game { IdGame = 0, MaxNbRed = 12, MaxNbGreen = 13, MaxNbBlue = 14 };
+        private readonly Game _refGame = new Game { IdGame = 0, MaxNbRed = 12, MaxNbGreen = 13, MaxNbBlue = 14 };
 
         public Day02(Part p)
         {
@@ -30,9 +30,9 @@ namespace AdventOfCode._2023
                 var cube = ParseLine(line);
                 if (p == Part.Part1)
                 {
-                    if (cube.MaxNbRed <= RefGame.MaxNbRed ||
-                        cube.MaxNbGreen <= RefGame.MaxNbGreen ||
-                        cube.MaxNbBlue <= RefGame.MaxNbBlue)
+                    if (cube.MaxNbRed <= _refGame.MaxNbRed ||
+                        cube.MaxNbGreen <= _refGame.MaxNbGreen ||
+                        cube.MaxNbBlue <= _refGame.MaxNbBlue)
                         result += cube.IdGame;
                 }
                 else
