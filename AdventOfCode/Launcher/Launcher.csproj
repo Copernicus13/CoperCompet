@@ -1,12 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <Copyright>2015-2024</Copyright>
     <OutputType>Exe</OutputType>
     <RootNamespace>AdventOfCode.Launcher</RootNamespace>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>AdventOfCode.Launcher.Program</StartupObject>
+    <StartupObject>$(RootNamespace).Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\2015\2015.csproj" />
