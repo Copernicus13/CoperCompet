@@ -119,6 +119,8 @@ namespace AdventOfCode._2023
                 {
                     var curX = xSpan;
                     var curY = y[idx++];
+                    if (curX == curY)
+                        continue;
                     if (_part == Part.Part2)
                     {
                         if (curX == Joker)
@@ -126,16 +128,11 @@ namespace AdventOfCode._2023
                         if (curY == Joker)
                             curY = '1';
                     }
-                    if (curX != curY)
-                    {
-                        if (char.IsDigit(curX) && char.IsDigit(curY))
-                            return curX.CompareTo(curY);
-                        if (char.IsDigit(curX) && !char.IsDigit(curY))
-                            return -1;
-                        if (!char.IsDigit(curX) && char.IsDigit(curY))
-                            return 1;
-                        return -curX.CompareTo(curY);
-                    }
+                    if (char.IsDigit(curX) && char.IsDigit(curY))
+                        return curX.CompareTo(curY);
+                    if (char.IsDigit(curX) && !char.IsDigit(curY))
+                        return -1;
+                    return !char.IsDigit(curX) && char.IsDigit(curY) ? 1 : -curX.CompareTo(curY);
                 }
                 return 0;
             }
@@ -149,12 +146,10 @@ namespace AdventOfCode._2023
             while (!string.IsNullOrEmpty(line = Console.ReadLine()!))
                 hands.Add(new PokerHand(line));
 
-            hands.Sort(new PokerHandComparer(p));
-
-            int result = 0;
-            for (var i = 0; i < hands.Count; ++i)
-                result += hands[i].BidAmount * (i + 1);
-            Console.WriteLine(result);
+            Console.WriteLine(
+                hands.Order(new PokerHandComparer(p))
+                    .Select((hand, index) => (index + 1) * hand.BidAmount)
+                    .Sum());
         }
     }
 }
