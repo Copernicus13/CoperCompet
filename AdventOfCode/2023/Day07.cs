@@ -10,7 +10,7 @@ namespace AdventOfCode._2023
     /// </summary>
     public class Day07
     {
-        private static readonly char Joker = 'R';
+        private static char _joker;
 
         private enum HandType
         {
@@ -23,118 +23,67 @@ namespace AdventOfCode._2023
             CheatCarre = 8
         }
 
-        private class PokerHand
+        private class PokerHand : IComparable<PokerHand>
         {
-            private readonly char[] cards;
+            private readonly Part _part;
+            private readonly char[] _cards;
+            private string Cards => new string(_cards);
 
-            public string Cards => new string(cards);
             public int BidAmount { get; }
 
-            public PokerHand(string strToParse)
+            public PokerHand(Part p, string strToParse)
             {
-                cards = strToParse.Split(' ')[0].Replace("J", Joker.ToString()).ToCharArray();
+                _part = p;
+                _cards = strToParse.Split(' ')[0]
+                    // To be able to sort using ordinal rule
+                    .Replace('A', 'Z').Replace('K', 'Y').Replace('Q', 'X').Replace('J', _joker)
+                    .ToCharArray();
                 BidAmount = int.Parse(strToParse.Split(' ')[1]);
             }
 
-            public HandType GetResult(Part p)
+            private HandType GetResult()
             {
-                IDictionary<char, int> win = new Dictionary<char, int>();
-                foreach (var card in cards)
+                var win = new Dictionary<char, int>();
+                foreach (var card in _cards)
                 {
-                    if (win.ContainsKey(card) || p == Part.Part2 && card == Joker)
+                    if (win.ContainsKey(card) || _part == Part.Part2 && card == _joker)
                         continue;
-                    int nbCard = cards.Count(c => c == card);
+                    int nbCard = _cards.Count(c => c == card);
                     if (nbCard > 1)
                         win.Add(card, nbCard);
                 }
-
-                var result = ComputeHand(win);
-                if (p == Part.Part2 && cards.Contains(Joker))
-                {
-                    int nbJoker = cards.Count(c => c == Joker);
-
+                var result = !win.Any() ?
+                    HandType.HighCard :
+                    (win.Values.Max(), win.Count) switch
+                    {
+                        (5, 1) => HandType.CheatCarre,
+                        (4, 1) => HandType.Carre,
+                        (3, 2) => HandType.FullHouse,
+                        (3, 1) => HandType.Brelan,
+                        (2, 2) => HandType.TwoPair,
+                        (2, 1) => HandType.OnePair,
+                        _ => throw new Exception()
+                    };
+                if (_part == Part.Part2 && _cards.Contains(_joker))
                     result = result switch
                     {
-                        HandType.HighCard when nbJoker == 5 => HandType.CheatCarre,
+                        HandType.HighCard when _cards.Count(c => c == _joker) == 5 => HandType.CheatCarre,
                         HandType.HighCard or HandType.OnePair or HandType.Brelan =>
-                            (HandType)((int)result + nbJoker * 2),
+                            (HandType)((int)result + _cards.Count(c => c == _joker) * 2),
                         HandType.TwoPair => HandType.FullHouse,
                         HandType.Carre => HandType.CheatCarre,
                         _ => throw new Exception()
                     };
-                }
                 return result;
             }
 
-            private static HandType ComputeHand(IDictionary<char, int> win)
+            public int CompareTo(PokerHand? other)
             {
-                return !win.Any() ? HandType.HighCard :
-                    win.Count == 1 ? win.First().Value switch
-                    {
-                        5 => HandType.CheatCarre,
-                        4 => HandType.Carre,
-                        3 => HandType.Brelan,
-                        2 => HandType.OnePair,
-                        _ => throw new Exception()
-                    } :
-                    win.Values.Max() switch
-                    {
-                        3 => HandType.FullHouse,
-                        2 => HandType.TwoPair,
-                        _ => throw new Exception()
-                    };
-            }
-        }
-
-
-        private class PokerHandComparer : IComparer<PokerHand>
-        {
-            private readonly Part _part;
-
-            public PokerHandComparer(Part p)
-            {
-                _part = p;
-            }
-
-            public int Compare(PokerHand? x, PokerHand? y)
-            {
-                switch (x, y)
-                {
-                    case (not null, null):
-                        return 1;
-                    case (null, null):
-                        return 0;
-                    case (null, not null):
-                        return -1;
-                }
-                var resultX = x.GetResult(_part);
-                var resultY = y.GetResult(_part);
-                return resultX == resultY ? Compare(x.Cards, y.Cards) : resultX - resultY;
-            }
-
-            private int Compare(string x, string y)
-            {
-                int idx = 0;
-                foreach (var xSpan in x.AsSpan())
-                {
-                    var curX = xSpan;
-                    var curY = y[idx++];
-                    if (curX == curY)
-                        continue;
-                    if (_part == Part.Part2)
-                    {
-                        if (curX == Joker)
-                            curX = '1';
-                        if (curY == Joker)
-                            curY = '1';
-                    }
-                    if (char.IsDigit(curX) && char.IsDigit(curY))
-                        return curX.CompareTo(curY);
-                    if (char.IsDigit(curX) && !char.IsDigit(curY))
-                        return -1;
-                    return !char.IsDigit(curX) && char.IsDigit(curY) ? 1 : -curX.CompareTo(curY);
-                }
-                return 0;
+                if (other is null)
+                    return 1;
+                var resultX = GetResult();
+                var resultY = other.GetResult();
+                return resultX == resultY ? string.CompareOrdinal(Cards, other.Cards) : resultX - resultY;
             }
         }
 
@@ -143,11 +92,13 @@ namespace AdventOfCode._2023
             string line;
             var hands = new List<PokerHand>();
 
+            _joker = p == Part.Part1 ? 'V' : '1';
+
             while (!string.IsNullOrEmpty(line = Console.ReadLine()!))
-                hands.Add(new PokerHand(line));
+                hands.Add(new PokerHand(p, line));
 
             Console.WriteLine(
-                hands.Order(new PokerHandComparer(p))
+                hands.Order()
                     .Select((hand, index) => (index + 1) * hand.BidAmount)
                     .Sum());
         }
