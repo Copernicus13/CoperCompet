@@ -69,6 +69,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoperAlgoLib", "CoperAlgoLi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{A61893FE-7B97-41A8-8DEC-5C26399FC7E8}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject

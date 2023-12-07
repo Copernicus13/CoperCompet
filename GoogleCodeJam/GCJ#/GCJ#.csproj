@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>GoogleCodeJam.Launcher.Program</StartupObject>
+    <StartupObject>GoogleCodeJam.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

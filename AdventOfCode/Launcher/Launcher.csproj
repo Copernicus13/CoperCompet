@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Copyright>2015-2024</Copyright>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AdventOfCode.Launcher</RootNamespace>
+    <RootNamespace>$(RootNamespace).$(MSBuildProjectName)</RootNamespace>
     <StartupObject>$(RootNamespace).Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>

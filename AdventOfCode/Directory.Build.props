@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+      <RootNamespace>AdventOfCode</RootNamespace>
+  </PropertyGroup>
+</Project>
