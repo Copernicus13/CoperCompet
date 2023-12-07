@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
-		<OutputType>Library</OutputType>
-		<RootNamespace>AdventOfCode._2021</RootNamespace>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-	</PropertyGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\Common\Common.csproj" />
-		<ProjectReference Include="..\..\CoperAlgoLib\CoperAlgoLib.csproj" />
-	</ItemGroup>
+  <PropertyGroup>
+    <Description>AdventOfCode 2021 library</Description>
+    <OutputType>Library</OutputType>
+    <RootNamespace>$(RootNamespace)._2021</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
 </Project>

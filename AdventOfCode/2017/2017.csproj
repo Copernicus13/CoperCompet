@@ -1,12 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <Description>AdventOfCode 2017 library</Description>
     <OutputType>Library</OutputType>
-    <RootNamespace>AdventOfCode._2017</RootNamespace>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>$(RootNamespace)._2017</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
-    <ProjectReference Include="..\..\CoperAlgoLib\CoperAlgoLib.csproj" />
   </ItemGroup>
 </Project>

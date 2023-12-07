@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Copyright>2015-2024</Copyright>
+    <Description>AdventOfCode launcher</Description>
     <OutputType>Exe</OutputType>
     <RootNamespace>$(RootNamespace).$(MSBuildProjectName)</RootNamespace>
     <StartupObject>$(RootNamespace).Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\2015\2015.csproj" />
     <ProjectReference Include="..\2016\2016.csproj" />
     <ProjectReference Include="..\2017\2017.csproj" />
     <ProjectReference Include="..\2021\2021.csproj" />
     <ProjectReference Include="..\2023\2023.csproj" />
-    <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 </Project>

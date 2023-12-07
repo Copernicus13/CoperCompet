@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdventOfCode", "AdventOfCode", "{716A8F08-5759-4831-9AC3-859D9B615A9A}"
+	ProjectSection(SolutionItems) = preProject
+		AdventOfCode\Directory.Build.props = AdventOfCode\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2015", "AdventOfCode\2015\2015.csproj", "{7DD815ED-B5E5-4762-B3A4-279839BBE571}"
 EndProject

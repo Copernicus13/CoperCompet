@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Description>AdventOfCode 2023 library</Description>
     <OutputType>Library</OutputType>
-    <RootNamespace>AdventOfCode._2023</RootNamespace>
-    <Nullable>enable</Nullable>
+    <RootNamespace>$(RootNamespace)._2023</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
