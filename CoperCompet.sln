@@ -57,6 +57,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCJ#", "GoogleCodeJam\GCJ#\GCJ#.csproj", "{686E4FB1-A631-45F9-B63A-571AABD1D567}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HackerCup", "HackerCup", "{AE484B8D-0A81-4A4F-8C49-6A82CF7B3989}"
+	ProjectSection(SolutionItems) = preProject
+		HackerCup\Directory.Build.props = HackerCup\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2017", "HackerCup\2017\2017.csproj", "{112D44EB-9A65-4074-8DBE-03E0181CB270}"
 EndProject
