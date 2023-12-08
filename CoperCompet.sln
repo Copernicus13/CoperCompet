@@ -48,6 +48,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG", "CodinGame\CG.vcxproj", "{ED5AEABC-5F72-45D4-AC8A-04E1F2643B7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GoogleCodeJam", "GoogleCodeJam", "{7F0B8357-4286-4693-B359-C1B96B396623}"
+	ProjectSection(SolutionItems) = preProject
+		GoogleCodeJam\Directory.Build.props = GoogleCodeJam\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCJ++", "GoogleCodeJam\GCJ++\GCJ++.vcxproj", "{5E29BE9F-AEA5-4D37-90E9-CED98B83B86B}"
 EndProject

@@ -7,7 +7,6 @@
     <ProjectGuid>{686E4FB1-A631-45F9-B63A-571AABD1D567}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GoogleCodeJam</RootNamespace>
     <AssemblyName>GCJ#</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
