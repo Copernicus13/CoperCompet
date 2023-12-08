@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BattleDev
+namespace BattleDev.Launcher
 {
     public class Program
     {
