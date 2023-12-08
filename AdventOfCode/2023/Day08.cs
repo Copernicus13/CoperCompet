@@ -55,9 +55,9 @@ namespace AdventOfCode._2023
                 }
                 var pgcd = finishPointsDistance
                     .Skip(1)
-                    .Select(Maths.GetFactors)
+                    .Select(Maths.GetAllDivisors)
                     .Aggregate(
-                        new HashSet<int>(Maths.GetFactors(finishPointsDistance[0])),
+                        new HashSet<int>(Maths.GetAllDivisors(finishPointsDistance[0])),
                         (h, e) => { h.IntersectWith(e); return h; })
                     .Max();
                 // PPCM using PGCD

@@ -77,7 +77,7 @@ namespace AdventOfCode._2023
                 return result;
             }
 
-            public int CompareTo(PokerHand? other)
+            public int CompareTo(PokerHand other)
             {
                 if (other is null)
                     return 1;

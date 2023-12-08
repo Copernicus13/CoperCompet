@@ -54,13 +54,13 @@ namespace AdventOfCode._2023
                 result[0].AddRange(
                     line.Split(':')[1]
                         .Split(' ', StringSplitOptions.RemoveEmptyEntries)
-                        .Select(s => (new Range<long>(long.Parse(s), 1, isMax: false), 0L)));
+                        .Select(s => (new Range<long>(long.Parse(s), 1), 0L)));
             else if (p == Part.Part2)
                 result[0].AddRange(
                     line.Split(':')[1]
                         .Split(' ', StringSplitOptions.RemoveEmptyEntries)
                         .Chunk(2)
-                        .Select(s => (new Range<long>(long.Parse(s[0]), long.Parse(s[1]), isMax: false), 0L)));
+                        .Select(s => (new Range<long>(long.Parse(s[0]), long.Parse(s[1])), 0L)));
 
             Console.ReadLine();
             for (var i = 1; i < 8; ++i)

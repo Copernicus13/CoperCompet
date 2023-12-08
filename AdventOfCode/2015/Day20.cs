@@ -25,7 +25,7 @@ namespace AdventOfCode._2015
             for (int i = 1; i <= NB; ++i)
             {
                 houses.Add(0);
-                foreach (var f in Maths.GetFactors(i))
+                foreach (var f in Maths.GetAllDivisors(i))
                     if (p == Part.Part1 || p == Part.Part2 && f * 50 >= i)
                         houses[i - 1] += elves[f - 1];
                 if (houses[i - 1] >= target)
