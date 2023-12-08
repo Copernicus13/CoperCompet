@@ -23,6 +23,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Launcher", "AdventOfCode\Launcher\Launcher.csproj", "{DF6D5D18-07BC-477A-B1B1-B9C3EC58DBA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BattleDev", "BattleDev", "{7014FD57-62C2-4F14-B814-D3B12506D2A9}"
+	ProjectSection(SolutionItems) = preProject
+		BattleDev\Directory.Build.props = BattleDev\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2014-11", "BattleDev\2014-11\2014-11.csproj", "{8E8D769D-37DD-490A-A90C-58145774F05E}"
 EndProject
