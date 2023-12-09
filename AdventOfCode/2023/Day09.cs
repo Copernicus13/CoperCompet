@@ -17,19 +17,15 @@ namespace AdventOfCode._2023
             var list = new List<List<long>>();
 
             while (!string.IsNullOrEmpty(line = Console.ReadLine()!))
-            {
-                var numbers = new List<long>();
-                numbers.AddRange(line.Split(' ').Select(long.Parse));
-                list.Add(numbers);
-            }
+                list.Add(line.Split(' ').Select(long.Parse).ToList());
 
             foreach (var numbers in list)
                 Extrapolate(numbers);
 
             if (p == Part.Part1)
-                Console.WriteLine(list.Aggregate(0L, (i, numbers) => i + numbers.Last()));
+                Console.WriteLine(list.Sum(s => s.Last()));
             else if (p == Part.Part2)
-                Console.WriteLine(list.Aggregate(0L, (i, numbers) => i + numbers.First()));
+                Console.WriteLine(list.Sum(s => s.First()));
         }
 
         private void Extrapolate(List<long> numbers)
