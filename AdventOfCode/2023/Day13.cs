@@ -22,235 +22,81 @@ namespace AdventOfCode._2023
                 while (!string.IsNullOrEmpty(line = Console.ReadLine()!))
                     map.Add(new List<char>(line));
 
-                int x, y;
                 // Copy to array
                 char[,] tab = new char[map.Count, map[0].Count];
-                for (y = 0; y < tab.GetLength(0); ++y)
-                    for (x = 0; x < tab.GetLength(1); ++x)
+                for (int y = 0; y < tab.GetLength(0); ++y)
+                    for (int x = 0; x < tab.GetLength(1); ++x)
                         tab[y, x] = map[y][x];
 
+                var initResult = FindReflection(tab);
                 if (p == Part.Part1)
-                    result += FindReflection(tab).Item2;
+                    result += initResult.Score;
                 else
                 {
-                    var h = new List<(bool, long, int, int)>();
-                    var initResult = FindReflection(tab);
-                    for (y = 0; y < tab.GetLength(0); ++y)
-                    {
-                        for (x = 0; x < tab.GetLength(1); ++x)
+                    bool found = false;
+                    for (int y = 0; y < tab.GetLength(0) && !found; ++y)
+                        for (int x = 0; x < tab.GetLength(1) && !found; ++x)
                         {
                             char init = tab[y, x];
                             tab[y, x] = init == '#' ? '.' : '#';
-                            var intermResult = FindReflection(tab);
-                            if (intermResult.Item1 &&
-                                intermResult.Item2 != initResult.Item2 &&
-                                (initResult.Item3 == -1 || initResult.Item3 != intermResult.Item3) &&
-                                (initResult.Item4 == -1 || initResult.Item4 != intermResult.Item4) &&
-                                !h.Contains(intermResult))
+                            // Try FindReflection in normal and reverse way
+                            for (int b = 1; b >= 0 && !found; --b)
                             {
-                                h.Add(intermResult);
-                            }
-                            else
-                            {
-                                intermResult = FindReflection(tab, false);
-                                if (intermResult.Item1 &&
-                                    intermResult.Item2 != initResult.Item2 &&
-                                    (initResult.Item3 == -1 || initResult.Item3 != intermResult.Item3) &&
-                                    (initResult.Item4 == -1 || initResult.Item4 != intermResult.Item4) &&
-                                    !h.Contains(intermResult))
+                                var intermResult = FindReflection(tab, b == 0);
+                                if (intermResult.IsValid &&
+                                    intermResult.Score != initResult.Score &&
+                                    (intermResult.XSym == -1 || intermResult.XSym != initResult.XSym) &&
+                                    (intermResult.YSym == -1 || intermResult.YSym != initResult.YSym))
                                 {
-                                    h.Add(intermResult);
-                                }
-                                else
-                                {
-                                    intermResult = FindReflectionReverse(tab);
-                                    if (intermResult.Item1 &&
-                                        intermResult.Item2 != initResult.Item2 &&
-                                        (initResult.Item3 == -1 || initResult.Item3 != intermResult.Item3) &&
-                                        (initResult.Item4 == -1 || initResult.Item4 != intermResult.Item4) &&
-                                        !h.Contains(intermResult))
-                                    {
-                                        h.Add(intermResult);
-                                    }
-                                    else
-                                    {
-                                        intermResult = FindReflectionReverse(tab, false);
-                                        if (intermResult.Item1 &&
-                                            intermResult.Item2 != initResult.Item2 &&
-                                            (initResult.Item3 == -1 || initResult.Item3 != intermResult.Item3) &&
-                                            (initResult.Item4 == -1 || initResult.Item4 != intermResult.Item4) &&
-                                            !h.Contains(intermResult))
-                                        {
-                                            h.Add(intermResult);
-                                        }
-                                    }
+                                    result += intermResult.Score;
+                                    found = true;
                                 }
                             }
                             tab[y, x] = init;
                         }
-                    }
-                    if (h.Count == 0)
-                        throw new Exception();
-                    if (h.Count > 1)
-                        throw new Exception();
-                    result += h[0].Item2;
                 }
             }
 
             Console.WriteLine(result);
         }
 
-        private (bool, long, int, int) FindReflection(char[,] tab, bool rowFirst = true)
+        private (bool IsValid, long Score, int XSym, int YSym) FindReflection(char[,] tab, bool reverse = false)
         {
-            if (rowFirst)
+            // Vertical then horizontal in normal, horizontal then vertical in reverse
+            var dim = Enumerable.Range(0, 2);
+            if (reverse)
+                dim = dim.Reverse();
+            foreach (int dimension in dim)
             {
-                char[] lastRow = new char[tab.GetLength(0)];
-                // Horizontal
-                for (int y = 0; y < tab.GetLength(0); ++y)
+                // Ascendant iteration in normal, descendant in reverse
+                var indexes = Enumerable.Range(0, tab.GetLength(dimension));
+                if (reverse)
+                    indexes = indexes.Reverse();
+                char[] lastLine = new char[tab.GetLength(dimension)];
+                foreach (int i in indexes)
                 {
-                    var row = tab.GetRow(y);
-                    if (row.SequenceEqual(lastRow))
+                    var line = GetLine(tab, dimension, i);
+                    if (line.SequenceEqual(lastLine))
                     {
-                        var f = CheckSymetry(tab, -1, y);
-                        if (f.Item1)
-                            return (true, f.Item2, -1, y);
+                        int idx = reverse ? i + 1 : i;
+                        bool isSymetric = true;
+                        int idx1 = idx - 1, idx2 = idx;
+                        while (idx1 >= 0 && idx2 < tab.GetLength(dimension) && isSymetric)
+                            if (!GetLine(tab, dimension, idx1--).SequenceEqual(GetLine(tab, dimension, idx2++)))
+                                isSymetric = false;
+                        if (isSymetric)
+                            return (true,
+                                idx * (dimension == 0 ? 100 : 1),
+                                dimension == 1 ? idx : -1,
+                                dimension == 0 ? idx : -1);
                     }
-                    lastRow = row;
-                }
-
-                char[] lastCol = new char[tab.GetLength(1)];
-                // Vertical
-                for (int x = 0; x < tab.GetLength(1); ++x)
-                {
-                    var col = tab.GetColumn(x);
-                    if (col.SequenceEqual(lastCol))
-                    {
-                        var f = CheckSymetry(tab, x, -1);
-                        if (f.Item1)
-                            return (true, f.Item2, x, -1);
-                    }
-                    lastCol = col;
+                    lastLine = line;
                 }
             }
-            else
-            {
-                char[] lastCol = new char[tab.GetLength(1)];
-                // Vertical
-                for (int x = 0; x < tab.GetLength(1); ++x)
-                {
-                    var col = tab.GetColumn(x);
-                    if (col.SequenceEqual(lastCol))
-                    {
-                        var f = CheckSymetry(tab, x, -1);
-                        if (f.Item1)
-                            return (true, f.Item2, x, -1);
-                    }
-                    lastCol = col;
-                }
-
-                char[] lastRow = new char[tab.GetLength(0)];
-                // Horizontal
-                for (int y = 0; y < tab.GetLength(0); ++y)
-                {
-                    var row = tab.GetRow(y);
-                    if (row.SequenceEqual(lastRow))
-                    {
-                        var f = CheckSymetry(tab, -1, y);
-                        if (f.Item1)
-                            return (true, f.Item2, -1, y);
-                    }
-                    lastRow = row;
-                }
-            }
-
             return (false, 0, 0, 0);
         }
 
-        private (bool, long, int, int) FindReflectionReverse(char[,] tab, bool rowFirst = true)
-        {
-            if (rowFirst)
-            {
-                char[] lastRow = new char[tab.GetLength(0)];
-                // Horizontal
-                for (int y = tab.GetLength(0) - 1; y >= 0; --y)
-                {
-                    var row = tab.GetRow(y);
-                    if (row.SequenceEqual(lastRow))
-                    {
-                        var f = CheckSymetry(tab, -1, y + 1);
-                        if (f.Item1)
-                            return (true, f.Item2, -1, y + 1);
-                    }
-                    lastRow = row;
-                }
-
-                char[] lastCol = new char[tab.GetLength(1)];
-                // Vertical
-                for (int x = tab.GetLength(1) - 1; x >= 0; --x)
-                {
-                    var col = tab.GetColumn(x);
-                    if (col.SequenceEqual(lastCol))
-                    {
-                        var f = CheckSymetry(tab, x + 1, -1);
-                        if (f.Item1)
-                            return (true, f.Item2, x + 1, -1);
-                    }
-                    lastCol = col;
-                }
-            }
-            else
-            {
-                char[] lastCol = new char[tab.GetLength(1)];
-                // Vertical
-                for (int x = tab.GetLength(1) - 1; x >= 0; --x)
-                {
-                    var col = tab.GetColumn(x);
-                    if (col.SequenceEqual(lastCol))
-                    {
-                        var f = CheckSymetry(tab, x + 1, -1);
-                        if (f.Item1)
-                            return (true, f.Item2, x + 1, -1);
-                    }
-                    lastCol = col;
-                }
-
-                char[] lastRow = new char[tab.GetLength(0)];
-                // Horizontal
-                for (int y = tab.GetLength(0) - 1; y >= 0; --y)
-                {
-                    var row = tab.GetRow(y);
-                    if (row.SequenceEqual(lastRow))
-                    {
-                        var f = CheckSymetry(tab, -1, y + 1);
-                        if (f.Item1)
-                            return (true, f.Item2, -1, y + 1);
-                    }
-                    lastRow = row;
-                }
-            }
-
-            return (false, 0, 0, 0);
-        }
-
-        private (bool, long) CheckSymetry(char[,] tab, int x, int y)
-        {
-            // Horizontal
-            if (x == -1)
-            {
-                int y1 = y - 1, y2 = y;
-                while (y1 >= 0 && y2 < tab.GetLength(0))
-                    if (!tab.GetRow(y1--).SequenceEqual(tab.GetRow(y2++)))
-                        return (false, 0);
-                return (true, y * 100);
-            }
-
-            // Vertical
-            int x1 = x - 1, x2 = x;
-            while (x1 >= 0 && x2 < tab.GetLength(1))
-                if (!tab.GetColumn(x1--).SequenceEqual(tab.GetColumn(x2++)))
-                    return (false, 0);
-
-            return (true, x);
-        }
+        private static char[] GetLine(char[,] tab, int dim, int idx) =>
+            dim == 0 ? tab.GetRow(idx) : tab.GetColumn(idx);
     }
 }
