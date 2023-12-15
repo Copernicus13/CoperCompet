@@ -25,11 +25,7 @@ namespace AdventOfCode._2023
             while (!string.IsNullOrEmpty(line = Console.ReadLine()!))
                 map.Add(line.ToList());
 
-            // Copy to array
-            char[,] tab = new char[map.Count, map[0].Count];
-            for (int y = 0; y < tab.GetLength(0); ++y)
-                for (int x = 0; x < tab.GetLength(1); ++x)
-                    tab[y, x] = map[y][x];
+            char[,] tab = map.ToJaggedArray();
 
             // Find galaxies
             var galaxies = new Queue<Point>();
