@@ -22,11 +22,7 @@ namespace AdventOfCode._2023
                 while (!string.IsNullOrEmpty(line = Console.ReadLine()!))
                     map.Add(new List<char>(line));
 
-                // Copy to array
-                char[,] tab = new char[map.Count, map[0].Count];
-                for (int y = 0; y < tab.GetLength(0); ++y)
-                    for (int x = 0; x < tab.GetLength(1); ++x)
-                        tab[y, x] = map[y][x];
+                char[,] tab = map.ToJaggedArray();
 
                 var initResult = FindReflection(tab);
                 if (p == Part.Part1)
@@ -43,10 +39,7 @@ namespace AdventOfCode._2023
                             for (int b = 1; b >= 0 && !found; --b)
                             {
                                 var intermResult = FindReflection(tab, b == 0);
-                                if (intermResult.IsValid &&
-                                    intermResult.Score != initResult.Score &&
-                                    (intermResult.XSym == -1 || intermResult.XSym != initResult.XSym) &&
-                                    (intermResult.YSym == -1 || intermResult.YSym != initResult.YSym))
+                                if (intermResult.IsValid && intermResult.Score != initResult.Score)
                                 {
                                     result += intermResult.Score;
                                     found = true;
@@ -60,7 +53,7 @@ namespace AdventOfCode._2023
             Console.WriteLine(result);
         }
 
-        private (bool IsValid, long Score, int XSym, int YSym) FindReflection(char[,] tab, bool reverse = false)
+        private (bool IsValid, long Score) FindReflection(char[,] tab, bool reverse = false)
         {
             // Vertical then horizontal in normal, horizontal then vertical in reverse
             var dim = Enumerable.Range(0, 2);
@@ -85,15 +78,12 @@ namespace AdventOfCode._2023
                             if (!GetLine(tab, dimension, idx1--).SequenceEqual(GetLine(tab, dimension, idx2++)))
                                 isSymetric = false;
                         if (isSymetric)
-                            return (true,
-                                idx * (dimension == 0 ? 100 : 1),
-                                dimension == 1 ? idx : -1,
-                                dimension == 0 ? idx : -1);
+                            return (true, idx * (dimension == 0 ? 100 : 1));
                     }
                     lastLine = line;
                 }
             }
-            return (false, 0, 0, 0);
+            return (false, 0);
         }
 
         private static char[] GetLine(char[,] tab, int dim, int idx) =>
