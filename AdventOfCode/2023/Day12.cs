@@ -10,7 +10,7 @@ namespace AdventOfCode._2023
     /// </summary>
     public class Day12
     {
-        private Dictionary<(string, int), long> _memo;
+        private readonly Dictionary<(string, int), long> _memo;
 
         public Day12(Part p)
         {
@@ -38,30 +38,30 @@ namespace AdventOfCode._2023
         {
             if (_memo.ContainsKey((record, queue.Count)))
                 return _memo[(record, queue.Count)];
-            var currentNum = queue.Dequeue();
+            int currentNum = queue.Dequeue();
             bool stopAsked = false;
             long nbArrangement = 0;
             for (int i = 0; i < record.Length && !stopAsked; ++i)
             {
-                if (i + currentNum > record.Length) // Current string too short, exit
+                if (i + currentNum > record.Length)		// Current string too short, exit
                     break;
-                if (record[i] == '#')   // No need to iterate anymore after that,
-                    stopAsked = true;   // we couldn’t let a single # alone behind
+                if (record[i] == '#')					// No need to iterate anymore after that,
+                    stopAsked = true;					// we couldn’t let a single # alone behind
                 if (record[i] == '.' || record.Substring(i, currentNum).Any(a => a == '.'))
-                    continue;
-                if (i + currentNum == record.Length)    // End of string reached
+                    continue;							// Points cannot change, exit
+                if (i + currentNum == record.Length)	// End of string reached
                 {
-                    if (queue.Count == 0)
+                    if (queue.Count == 0)				// No number left, valid arrangement
                         ++nbArrangement;
                     break;
                 }
-                if (record[i + currentNum] == '#') // Must not finish on a '#'
+                if (record[i + currentNum] == '#')		// Must not finish on a '#'
                     continue;
                 var remainder = record.Substring(i + currentNum + 1);
                 if (queue.Count > 0 && !string.IsNullOrEmpty(remainder))
                     nbArrangement += CountArrangements(remainder, new Queue<int>(queue));
                 else if (queue.Count == 0 && remainder.All(a => a != '#'))
-                    ++nbArrangement;
+                    ++nbArrangement;					// No number left nor #, valid arrangement
             }
             _memo.Add((record, queue.Count + 1), nbArrangement);
             return nbArrangement;
